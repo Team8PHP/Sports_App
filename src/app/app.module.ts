@@ -5,15 +5,16 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FavouritesComponent } from './Components/favourites/favourites.component';
 import { CalenderComponent } from './Components/calender/calender.component';
-import { LeaguesTableComponent } from './Components/leagues-table/leagues-table.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
+import { AllLeaguesListComponent } from './Components/all-leagues-list/all-leagues-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FavouritesComponent,
     CalenderComponent,
-    LeaguesTableComponent
+ 
+    AllLeaguesListComponent
   ],
   imports: [
     BrowserModule,

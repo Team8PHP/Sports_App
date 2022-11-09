@@ -1,6 +1,10 @@
 *{
   font-family:Nunito, sans-serif;
 }
+img{
+  border: 3px solid whitesmoke;
+  border-radius: 50%;
+}
 .text-blk{
   margin-top:0px;
   margin-right:0px;

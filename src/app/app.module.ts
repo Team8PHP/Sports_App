@@ -12,13 +12,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
+import { FilterPipe } from './filter.pipe';
 @NgModule({
   declarations: [
     AppComponent,
     FeaturedMatchComponent,
     FooterComponent,
     NavbarComponent,
-    TeamComponent
+    TeamComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -77,6 +77,16 @@ img{
   width:125px;
   display:flex;
   justify-content:space-between;
+
+}
+.social-media-links .logo{
+  margin: 3px;
+  padding: 3px;
+}
+.social-media-links img{
+  width: 30px;
+  border: 0px solid whitesmoke;
+  border-radius: 0%;
 }
 .name{
   font-size:25px;

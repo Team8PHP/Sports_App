@@ -14,7 +14,6 @@ import { AllLeaguesListComponent } from './Components/all-leagues-list/all-leagu
     AppComponent,
     FavouritesComponent,
     CalenderComponent,
- 
     AllLeaguesListComponent,
     MatchListComponent
   ],

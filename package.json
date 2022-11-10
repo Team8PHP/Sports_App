@@ -21,7 +21,6 @@
     "bootstrap": "^5.2.2",
     "@ng-bootstrap/ng-bootstrap": "^13.1.0",
     "@syncfusion/ej2-angular-calendars": "^20.3.50",
-    "bootstrap": "^5.2.2",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

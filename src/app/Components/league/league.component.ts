@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/Services/general.service';
 
 @Component({
   selector: 'app-league',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeagueComponent implements OnInit {
 
-  constructor() { }
+  constructor(private generalService:GeneralService) { }
 
   ngOnInit(): void {
+    
   }
 
 }

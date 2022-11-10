@@ -1,1 +1,65 @@
-<p>auth-form works!</p>
+<div class="container mt-5" id="container" [ngClass]="{'right-panel-active': switchClass === 1}">
+    <div class="form-container sign-up-container mt-2">
+        <form action="#" [formGroup]="regFormValidation" (ngSubmit)="SendData()">
+            <h1 class="font-weight-bold">Create Account</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google"></i></a>
+            </div>
+            <input formControlName="name" type="text" placeholder="Name" />
+            <div *ngIf="regFormValidation.controls['name'].invalid && (regFormValidation.controls['name'].dirty ||
+            regFormValidation.controls['name'].touched)">
+                <small class="alert text-danger mt-1">*Name must contain letters only</small>
+            </div>
+            <input formControlName="email" type="email" placeholder="Email" />
+            <div *ngIf="regFormValidation.controls['email'].invalid && (regFormValidation.controls['email'].dirty ||
+            regFormValidation.controls['email'].touched)">
+                <small class="alert text-danger mt-1">*Enter a valid email format</small>
+            </div>
+            <input formControlName="password" type="password" placeholder="Password" />
+            <div *ngIf="regFormValidation.controls['password'].invalid && (regFormValidation.controls['password'].dirty ||
+            regFormValidation.controls['password'].touched)">
+                <small class="alert text-danger mt-1">*Password min length is 5</small>
+            </div>
+            <button class="btn btn-success px-3">Sign up</button>
+        </form>
+    </div>
+
+    <div class="form-container sign-in-container">
+        <form action="#" [formGroup]="loginFormValidation" (ngSubmit)="Login()">
+            <h1 class="font-weight-bold">Sign in</h1>
+            <div class="social-container">
+                <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social"><i class="fab fa-google"></i></a>
+            </div>
+            <span>or use your account</span>
+            <input formControlName="email" type="email" placeholder="Email" />
+            <div *ngIf="loginFormValidation.controls['email'].invalid && (loginFormValidation.controls['email'].dirty ||
+            loginFormValidation.controls['email'].touched)">
+                <small class="alert text-danger mt-1">*Enter a valid email format</small>
+            </div>
+            <input formControlName="password" type="password" placeholder="Password" />
+            <div *ngIf="loginFormValidation.controls['password'].invalid && (loginFormValidation.controls['password'].dirty ||
+            loginFormValidation.controls['password'].touched)">
+                <small class="alert text-danger mt-1">*Password min length is 5</small>
+            </div>
+            <button class="btn btn-success px-3">Sign In</button>
+        </form>
+    </div>
+
+    <div class="overlay-container">
+        <div class="overlay">
+            <div class="overlay-trial position-absolute"></div>
+            <div class="overlay-panel overlay-left">
+                <h1 class="font-weight-bold">One of us?</h1>
+                <p>If you already has an account, just sign in. We've missed you!</p>
+                <button class="btn btn-success px-3" id="signIn" (click)="setSwitchClass()">Sign In</button>
+            </div>
+            <div class="overlay-panel overlay-right">
+                <h1 class="font-weight-bold">Hello, Friend!</h1>
+                <p>You don't have account yet? Don't worry! You still can join us</p>
+                <button class="btn btn-success px-3" id="signUp" (click)="setSwitchClass()">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,6 +19,12 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
+import { AuthFormComponent } from './Components/auth-form/auth-form.component';
+import {  ReactiveFormsModule } from '@angular/forms';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { AuthInterceptorService } from './Services/auth-interceptor.service';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +37,8 @@ import { FormsModule } from '@angular/forms';
     FavouritesComponent,
     CalenderComponent,
     AllLeaguesListComponent,
-    MatchListComponent
+    MatchListComponent,
+    AuthFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,8 +47,16 @@ import { FormsModule } from '@angular/forms';
     NgbModule,
     BrowserAnimationsModule,
     MatSliderModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true,
+    },
+  ],
   bootstrap: [AppComponent]
 
 })

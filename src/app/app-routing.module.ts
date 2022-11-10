@@ -1,9 +1,16 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MatchListComponent } from './components/match-list/match-list.component';
+import { AuthFormComponent } from './Components/auth-form/auth-form.component';
+import { ErrorComponent } from './views/error/error.component';
+import { FavouritesViewComponent } from './views/favourites-view/favourites-view.component';
+// import { MatchListComponent } from './components/match-list/match-list.component';
+import { HomeViewComponent } from './views/home-view/home-view.component';
 
 const routes: Routes = [
-  { path: 'matches', component: MatchListComponent },
+  { path: '', component: HomeViewComponent },
+  { path: 'auth', component: AuthFormComponent },
+  { path: 'favourites', component: FavouritesViewComponent }, 
+  { path: '**', component: ErrorComponent }, 
 ];
 
 @NgModule({

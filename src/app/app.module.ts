@@ -26,6 +26,10 @@ import { StandingsComponent } from './Components/standings/standings.component';
 import { TopPlayersComponent } from './Components/top-players/top-players.component';
 import { LeagueComponent } from './Components/league/league.component';
 import { GroupStandingsComponent } from './Components/group-standings/group-standings.component';
+import { HomeViewComponent } from './views/home-view/home-view.component';
+import { FavouritesViewComponent } from './views/favourites-view/favourites-view.component';
+import { ErrorComponent } from './views/error/error.component';
+import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +48,11 @@ import { GroupStandingsComponent } from './Components/group-standings/group-stan
     TopPlayersComponent,
     MatchListComponent,
     LeagueComponent,
-    GroupStandingsComponent
+    GroupStandingsComponent,
+    HomeViewComponent,
+    FavouritesViewComponent,
+    ErrorComponent,
+    AdSpaceComponent
   ],
   imports: [
     BrowserModule,

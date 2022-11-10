@@ -7,7 +7,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./auth-form.component.css']
 })
 export class AuthFormComponent implements OnInit {
-
+  switchClass = 0;
   constructor() { }
 
   ngOnInit(): void {
@@ -23,5 +23,9 @@ export class AuthFormComponent implements OnInit {
     email: new FormControl("", [Validators.required, Validators.email]),
     password: new FormControl("", [Validators.required, Validators.minLength(5)])
   })
+
+  setSwitchClass() {
+    this.switchClass ^= 1;
+  }
 
 }

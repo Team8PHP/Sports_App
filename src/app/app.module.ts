@@ -42,5 +42,7 @@ import { FormsModule } from '@angular/forms';
     MatSliderModule,
   ],
   providers: [],
+  bootstrap: [AppComponent]
+
 })
 export class AppModule { }

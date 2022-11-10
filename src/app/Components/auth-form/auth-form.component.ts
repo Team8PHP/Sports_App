@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/Services/auth.service';
+import { TokenService } from 'src/app/Services/token.service';
 
 @Component({
   selector: 'app-auth-form',
@@ -8,7 +10,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class AuthFormComponent implements OnInit {
   switchClass = 0;
-  constructor() { }
+  constructor(private AuthService:AuthService,private token:TokenService) { }
 
   ngOnInit(): void {
   }
@@ -26,6 +28,28 @@ export class AuthFormComponent implements OnInit {
 
   setSwitchClass() {
     this.switchClass ^= 1;
+  }
+
+  Login() {
+    if (this.loginFormValidation.valid) {
+      this.AuthService.Login(this.loginFormValidation).subscribe(data =>{
+        this.token.CreateToken(data);
+      })
+      this.loginFormValidation.reset();
+    } else {
+
+    }
+  }
+
+  SignUp() {
+    if (this.regFormValidation.valid) {
+      this.AuthService.SignUP(this.loginFormValidation).subscribe(data =>{
+        this.token.CreateToken(data);
+      })
+      this.regFormValidation.reset();
+    } else {
+
+    }
   }
 
 }

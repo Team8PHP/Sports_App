@@ -14,7 +14,6 @@ import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +21,7 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     NavbarComponent,
     TeamComponent,
-    FilterPipe,
-
+    FilterPipe
   ],
   imports: [
     BrowserModule,

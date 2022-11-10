@@ -6,17 +6,22 @@ import { AppComponent } from './app.component';
 import { LeagueComponent } from './components/views/league/league.component';
 import { StandingsComponent } from './components/views/standings/standings.component';
 import { TopPlayersComponent } from './components/views/top-players/top-players.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { WrapperComponent } from './components/views/wrapper/wrapper.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LeagueComponent,
     StandingsComponent,
-    TopPlayersComponent
+    TopPlayersComponent,
+    WrapperComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -13,6 +13,8 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MdbRippleModule } from 'mdb-angular-ui-kit/ripple';
 import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { FilterPipe } from './filter.pipe';
     FooterComponent,
     NavbarComponent,
     TeamComponent,
-    FilterPipe
+    FilterPipe,
+
   ],
   imports: [
     BrowserModule,
@@ -30,6 +33,7 @@ import { FilterPipe } from './filter.pipe';
     MatSliderModule,
     MdbRippleModule,
     MdbFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

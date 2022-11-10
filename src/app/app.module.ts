@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MatchListComponent } from './components/match-list/match-list.component';
@@ -20,11 +19,13 @@ import { MdbFormsModule } from 'mdb-angular-ui-kit/forms';
 import { FilterPipe } from './filter.pipe';
 import { FormsModule } from '@angular/forms';
 import { AuthFormComponent } from './Components/auth-form/auth-form.component';
-import {  ReactiveFormsModule } from '@angular/forms';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http'
 import { AuthInterceptorService } from './Services/auth-interceptor.service';
-
-
+import { StandingsComponent } from './Components/standings/standings.component';
+import { TopPlayersComponent } from './Components/top-players/top-players.component';
+import { LeagueComponent } from './Components/league/league.component';
+import { GroupStandingsComponent } from './Components/group-standings/group-standings.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,12 @@ import { AuthInterceptorService } from './Services/auth-interceptor.service';
     CalenderComponent,
     AllLeaguesListComponent,
     MatchListComponent,
-    AuthFormComponent
+    AuthFormComponent,
+    StandingsComponent,
+    TopPlayersComponent,
+    MatchListComponent,
+    LeagueComponent,
+    GroupStandingsComponent
   ],
   imports: [
     BrowserModule,
@@ -61,4 +67,4 @@ import { AuthInterceptorService } from './Services/auth-interceptor.service';
   bootstrap: [AppComponent]
 
 })
-export class AppModule { }
+export class AppModule {}

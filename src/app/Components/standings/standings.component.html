@@ -1,0 +1,153 @@
+<div class="container">
+  <div class="row gap-1">
+    <!-- start standings section -->
+    <!-- <section> -->
+    <!-- start standings table -->
+    <div class="col-lg-8 p-lg-1 shadow-lg border border-light border-3 rounded-3">
+      <!-- start table title -->
+      <div class="row justify-content-center text-center">
+        <div class="col-6">
+          <p class="text-center fs-6 fw-bold">Standings</p>
+        </div>
+      </div>
+      <!-- end table title -->
+      <!-- start table buttons -->
+      <!-- <div class="row ps-3">
+      <ul class="nav nav-pills">
+        <li class="nav-item">
+          <a class="nav-link fw-bold fs-6 " aria-current="page" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+
+      </ul>
+
+    </div> -->
+      <!-- end table buttons -->
+      <!-- start clubs standings -->
+      <div class="row">
+        <div class="col-12">
+          <table class="table table-hover table-responsive">
+            <thead>
+              <tr>
+                <td class="text-muted col-1"><small>#</small></td>
+                <td class="text-muted col-6"><small>Team</small></td>
+                <td class="text-muted"><small>P</small></td>
+                <td class="text-muted "><small>W</small></td>
+                <td class="text-muted "><small>D</small></td>
+                <td class="text-muted "><small>L</small></td>
+                <td class="text-muted col-1"><small>Goals</small></td>
+                <td class="text-muted text-center col-3"><small>Last 5</small></td>
+                <td class="text-muted"><small>Pts</small></td>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let standing of standings.data">
+                <!-- ranking -->
+                <td><small>{{standing.position}}</small></td>
+                <!-- team -->
+                <td>
+                  <div class="row">
+                    <div class="col-2"><img src="https://api.sofascore.app/api/v1/team/42/image" alt="" width="100%"
+                        height="100%"></div>
+                    <div class="col-8">
+                      <small>{{standing.club_name}}</small>
+                    </div>
+                  </div>
+                </td>
+                <!-- played -->
+                <td><small>13</small></td>
+                <!-- wins -->
+                <td><small>11</small></td>
+                <!-- draws -->
+                <td><small>1</small></td>
+                <!-- loses -->
+                <td><small>1</small></td>
+                <!-- goals -->
+                <td><small>{{standing.goals}}:11</small></td>
+                <!-- last 5 matches -->
+                <td>
+                  <div class="row justify-content-center ">
+                    <div class="col-12 rounded-3">
+                      <div class="row justify-content-center gap-1">
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success  "><small>W</small>
+                        </div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
+                        </div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-secondary"><small>D</small>
+                        </div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
+                        </div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success "><small>W</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <!-- points -->
+                <td><small>{{standing.points}}</small></td>
+              </tr>
+              <tr>
+                <!-- ranking -->
+                <td><small>2</small></td>
+                <!-- team -->
+                <td>
+                  <div class="row">
+                    <div class="col-2"><img src="https://api.sofascore.app/api/v1/team/17/image" alt="" width="100%"
+                        height="100%"></div>
+                    <div class="col-8">
+                      <small>Man City</small>
+                    </div>
+                  </div>
+                </td>
+                <!-- played -->
+                <td><small>13</small></td>
+                <!-- wins -->
+                <td><small>10</small></td>
+                <!-- draws -->
+                <td><small>2</small></td>
+                <!-- loses -->
+                <td><small>1</small></td>
+                <!-- goals -->
+                <td><small>39:12</small></td>
+                <!-- last 5 matches -->
+                <td>
+                  <div class="row justify-content-center ">
+                    <div class="col-12 rounded-3">
+                      <div class="row justify-content-center gap-1">
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success "><small>W</small>
+                        </div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-danger"><small>L</small></div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
+                        </div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
+                        </div>
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success "><small>W</small>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+                <!-- points -->
+                <td><small>32</small></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <!-- end clubs standings -->
+    </div>
+    <!-- end standings table -->
+    <div class="col-3 bg-primary bg-opacity-50 rounded-4">
+      asfqwfqfqf
+    </div>
+    <!-- <app-top-players class="col-5"></app-top-players> -->
+    <!-- </section> -->
+    <!-- end standings section -->
+
+  </div>
+</div>

@@ -11,6 +11,7 @@ import { AllLeaguesListComponent } from './Components/all-leagues-list/all-leagu
 import { StandingsComponent } from './Components/standings/standings.component';
 import { TopPlayersComponent } from './Components/top-players/top-players.component';
 import { LeagueComponent } from './Components/league/league.component';
+import { GroupStandingsComponent } from './Components/group-standings/group-standings.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LeagueComponent } from './Components/league/league.component';
     StandingsComponent,
     TopPlayersComponent,
     MatchListComponent,
-    LeagueComponent
+    LeagueComponent,
+    GroupStandingsComponent
   ],
   imports: [
     BrowserModule,

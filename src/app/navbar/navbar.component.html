@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">8score <img src="../../assets/image/iconmonstr-soccer-1.svg" alt=""></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+
+        <li class="nav-item">
+          <div>
+            <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchText" autofocus>
+            </form>
+          </div>
+          <ul class="list-group list-group-flush">
+      <!-- results of ngFor is passed to appFilter with argument searchText -->
+      <li class="list-group-item" *ngFor="let c of characters | appFilter: searchText">
+        {{c}}
+      </li>
+    </ul>
+        </li>
+        <li class="nav-item">
+          <div class="d-flex">
+            <a class="nav-link" href="#">FAVOURITS </a>
+          </div>
+        </li>
+      </ul>
+      <div class="d-flex">
+        <a class="nav-link" href="#"><img src="../../assets/image/iconmonstr-user-20.svg" alt=""> </a>
+      </div>
+    </div>
+  </div>
+</nav>

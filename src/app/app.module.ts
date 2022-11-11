@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatchListComponent } from './components/match-list/match-list.component';
+import { MatchListComponent } from './Components/match-list/match-list.component';
 import { FavouritesComponent } from './Components/favourites/favourites.component';
 import { CalenderComponent } from './Components/calender/calender.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
@@ -12,6 +12,7 @@ import { StandingsComponent } from './Components/standings/standings.component';
 import { TopPlayersComponent } from './Components/top-players/top-players.component';
 import { LeagueComponent } from './Components/league/league.component';
 import { GroupStandingsComponent } from './Components/group-standings/group-standings.component';
+import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GroupStandingsComponent } from './Components/group-standings/group-stan
     TopPlayersComponent,
     MatchListComponent,
     LeagueComponent,
-    GroupStandingsComponent
+    GroupStandingsComponent,
+    StandingsTopWrapperComponent
   ],
   imports: [
     BrowserModule,

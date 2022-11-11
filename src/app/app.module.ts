@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { MatchListComponent } from './components/match-list/match-list.component';
+import { MatchListComponent } from './Components/match-list/match-list.component';
 import { FavouritesComponent } from './Components/favourites/favourites.component';
 import { CalenderComponent } from './Components/calender/calender.component';
 import { CalendarModule } from '@syncfusion/ej2-angular-calendars';
@@ -30,6 +30,7 @@ import { HomeViewComponent } from './views/home-view/home-view.component';
 import { FavouritesViewComponent } from './views/favourites-view/favourites-view.component';
 import { ErrorComponent } from './views/error/error.component';
 import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
+import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
     HomeViewComponent,
     FavouritesViewComponent,
     ErrorComponent,
-    AdSpaceComponent
+    AdSpaceComponent,
+    StandingsTopWrapperComponent
   ],
   imports: [
     BrowserModule,

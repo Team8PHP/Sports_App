@@ -52,50 +52,44 @@
                 <!-- team -->
                 <td>
                   <div class="row">
-                    <div class="col-2"><img src="https://api.sofascore.app/api/v1/team/42/image" alt="" width="100%"
-                        height="100%"></div>
+                    <div class="col-2"><img src="{{standing.club_image}}" alt="" width="100%" height="100%"></div>
                     <div class="col-8">
                       <small>{{standing.club_name}}</small>
                     </div>
                   </div>
                 </td>
                 <!-- played -->
-                <td><small>13</small></td>
+                <td><small>{{standing.matches_played}}</small></td>
                 <!-- wins -->
-                <td><small>11</small></td>
+                <td><small>{{standing.wins}}</small></td>
                 <!-- draws -->
-                <td><small>1</small></td>
+                <td><small>{{standing.draws}}</small></td>
                 <!-- loses -->
-                <td><small>1</small></td>
+                <td><small>{{standing.losses}}</small></td>
                 <!-- goals -->
-                <td><small>{{standing.goals}}:11</small></td>
+                <td><small>{{standing.goals_for}}:{{standing.goals_against}}</small></td>
                 <!-- last 5 matches -->
                 <td>
                   <div class="row justify-content-center ">
                     <div class="col-12 rounded-3">
                       <div class="row justify-content-center gap-1">
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success  "><small>W</small>
-                        </div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
-                        </div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-secondary"><small>D</small>
-                        </div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
-                        </div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success "><small>W</small>
+
+                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center"
+                          [ngClass]="{'bg-success':form =='W','bg-secondary':form =='D','bg-danger':form =='L'}"
+                          *ngFor="let form of standing.form"><small>{{form}}</small>
                         </div>
                       </div>
                     </div>
                   </div>
                 </td>
                 <!-- points -->
-                <td><small>{{standing.points}}</small></td>
+                <td><small>43</small></td>
               </tr>
-              <tr>
-                <!-- ranking -->
-                <td><small>2</small></td>
-                <!-- team -->
-                <td>
+              <!-- <tr> -->
+              <!-- ranking -->
+              <!-- <td><small>2</small></td> -->
+              <!-- team -->
+              <!-- <td>
                   <div class="row">
                     <div class="col-2"><img src="https://api.sofascore.app/api/v1/team/17/image" alt="" width="100%"
                         height="100%"></div>
@@ -103,19 +97,19 @@
                       <small>Man City</small>
                     </div>
                   </div>
-                </td>
-                <!-- played -->
-                <td><small>13</small></td>
-                <!-- wins -->
-                <td><small>10</small></td>
-                <!-- draws -->
-                <td><small>2</small></td>
-                <!-- loses -->
-                <td><small>1</small></td>
-                <!-- goals -->
-                <td><small>39:12</small></td>
-                <!-- last 5 matches -->
-                <td>
+                </td> -->
+              <!-- played -->
+              <!-- <td><small>13</small></td> -->
+              <!-- wins -->
+              <!-- <td><small>10</small></td> -->
+              <!-- draws -->
+              <!-- <td><small>2</small></td> -->
+              <!-- loses -->
+              <!-- <td><small>1</small></td> -->
+              <!-- goals -->
+              <!-- <td><small>39:12</small></td> -->
+              <!-- last 5 matches -->
+              <!-- <td>
                   <div class="row justify-content-center ">
                     <div class="col-12 rounded-3">
                       <div class="row justify-content-center gap-1">
@@ -131,10 +125,10 @@
                       </div>
                     </div>
                   </div>
-                </td>
-                <!-- points -->
-                <td><small>32</small></td>
-              </tr>
+                </td> -->
+              <!-- points -->
+              <!-- <td><small>32</small></td> -->
+              <!-- </tr> -->
             </tbody>
           </table>
         </div>

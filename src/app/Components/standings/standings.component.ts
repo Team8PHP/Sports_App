@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GeneralService } from 'src/app/Services/general.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-standings',
@@ -7,10 +8,15 @@ import { GeneralService } from 'src/app/Services/general.service';
   styleUrls: ['./standings.component.css'],
 })
 export class StandingsComponent implements OnInit {
-  constructor(private generalService: GeneralService) {}
+  constructor(
+    private generalService: GeneralService,
+    private route: ActivatedRoute
+  ) {}
+  id: any;
   standings: any = [];
   ngOnInit(): void {
-    this.getLeagueStandings(1);
+    this.id = this.route.snapshot.paramMap.get('id');
+    this.getLeagueStandings(this.id);
   }
   getLeagueStandings(id: number) {
     return this.generalService.getLeagueStandings(id).subscribe((res) => {

@@ -29,13 +29,17 @@ export class GeneralService {
   }
 
   // matches
-  getMatches(date:string) {
+  getMatches(date: string) {
     return this.http.get(baseUrl + 'matches/' + date);
   }
 
   // live matches
-  getLiveMatches(date:string) {
+  getLiveMatches(date: string) {
     return this.http.get(baseUrl + 'matches/' + date + 'live');
   }
-  
+
+  // Top players
+  getTopScorers(id: number) {
+    return this.http.get(baseUrl + 'scorers/' + id);
+  }
 }

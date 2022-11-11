@@ -1,54 +1,63 @@
 <!-- start standings section -->
 <!-- <aside> -->
-  <!-- start top scorers table -->
-  <div class="col-lg-12 my-lg-2 p-lg-2 shadow-lg  rounded-3">
-    <!-- start table title -->
-    <div class="row justify-content-center ">
-      <div class="col-6">
-        <p class="text-center fs-6 fw-bold">Top Scorers</p>
-      </div>
+<!-- start top scorers table -->
+<div class="col-lg-12 my-lg-2 p-lg-2 shadow-lg  rounded-3">
+  <!-- start table title -->
+  <div class="row justify-content-center ">
+    <div class="col-6">
+      <p class="text-center fs-6 fw-bold">Top Scorers</p>
     </div>
-    <!-- end table title -->
-    <!-- start clubs standings -->
-    <div class="row">
-      <div class="col-12">
-        <table class="table table-hover table-responsive">
-          <thead>
-            <tr>
-              <td class="text-muted col-1"><small>#</small></td>
-              <td class="text-muted col-6"></td>
-              <td class="text-muted col-1"><small>Goals</small></td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
+  </div>
+  <!-- end table title -->
+  <!-- start clubs standings -->
+  <div class="row">
+    <div class="col-12">
+      <table class="table table-hover table-responsive text-center">
+        <thead>
+          <tr>
+            <td class="text-muted col-1"><small>#</small></td>
+            <td class="text-muted col-6"></td>
+            <td class="text-muted col-1"><small>Goals</small></td>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let scorer of scorers.data.player; let i=index">
+            <tr *ngIf="i+1<9">
               <!-- ranking -->
-              <td><small>1</small></td>
+              <td><small>{{i+1}}</small></td>
               <!-- player -->
               <td>
                 <div class="row">
-                  <div class="col-3 rounded-circle"><img class="rounded-circle" src="https://api.sofascore.app/api/v1/player/839956/image" alt="" width="100%"
-                      height="100%"></div>
+                  <div class="col-4 rounded-circle"><img class="rounded-circle"
+                      src="https://api.sofascore.app/api/v1/player/839956/image" alt="" width="100%" height="100%">
+                  </div>
                   <div class="col-8">
                     <div class="row flex-column">
 
-                      <small class="fs-6">Erling Haaland</small>
-
-                      <small class="text-muted">Erling Haaland</small>
-
+                      <small class="fs-6">{{scorer.name}}</small>
+                      <div class="row align-items-center">
+                        <div class="col-5">
+                          <img class="rounded-circle" src="{{scorer.club.image}}" alt=""
+                            width="100%" height="100%">
+                        </div>
+                        <div class="col-3">
+                          <small class="text-muted">{{scorer.position}}</small>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </td>
-              <!-- points -->
-              <td><small>34</small></td>
+              <!-- goals -->
+              <td><small>{{scorer.goals}}</small></td>
             </tr>
-          </tbody>
-        </table>
-      </div>
+          </ng-container>
+        </tbody>
+      </table>
     </div>
-    <!-- end clubs standings -->
   </div>
-  <!-- end standings table -->
+  <!-- end clubs standings -->
+</div>
+<!-- end standings table -->
 <!-- </aside> -->
 <!-- end top scorers section -->

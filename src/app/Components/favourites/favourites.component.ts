@@ -17,4 +17,10 @@ export class FavouritesComponent implements OnInit {
       this.favourites = res;
     });
   }
+  addfavourites(){
+    // return this.generalService.addtoFavourites()
+  }
+  deletefavourites(){
+    // return this.generalService.deletefromFavourites()
+  }
 }

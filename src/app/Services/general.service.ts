@@ -27,5 +27,15 @@ export class GeneralService {
   getAllLeagues() {
     return this.http.get(baseUrl + 'leagues');
   }
+
+  // matches
+  getMatches(date:string) {
+    return this.http.get(baseUrl + 'matches/' + date);
+  }
+
+  // live matches
+  getLiveMatches(date:string) {
+    return this.http.get(baseUrl + 'matches/' + date + 'live');
+  }
   
 }

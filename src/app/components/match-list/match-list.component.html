@@ -5,101 +5,11 @@
                 <li class="list-group-item d-flex align-items-center">
                     <h3 class="text-danger me-2"><i class="fa-solid fa-circle text-danger fa-xs"></i> Live</h3>
                     <label class="switch">
-                        <input type="checkbox">
+                        <input type="checkbox" [(ngModel)]="liveChecked" (change)="checkValue(liveChecked?true:false)">
                         <span class="slider round"></span>
                     </label>
                 </li>
-                <li class="list-group-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <img class="flag-icon" src="assets/spain.png" alt="">
-                            <div class="d-flex flex-column ms-3">
-                                <small class="text-secondary">spain</small>
-                                <small>la liga</small>
-                            </div>
-                        </div>
-                        <div>
-                            <small class="text-success">ratings</small>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-2">
-                        <div class="d-flex align-items-center">
-                            <small>22:00</small>
-                            <div class="line-before d-flex flex-column ms-2 ps-2">
-                                <small>Barcelona</small>
-                                <small>Real Madrid</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="line-after d-flex flex-column ms-2 ps-2">
-                                <small>2</small>
-                                <small>0</small>
-                            </div>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <img class="flag-icon" src="assets/spain.png" alt="">
-                            <div class="d-flex flex-column ms-3">
-                                <small class="text-secondary">spain</small>
-                                <small>la liga</small>
-                            </div>
-                        </div>
-                        <div>
-                            <small class="text-success">ratings</small>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-2">
-                        <div class="d-flex align-items-center">
-                            <small>22:00</small>
-                            <div class="line-before d-flex flex-column ms-2 ps-2">
-                                <small>Barcelona</small>
-                                <small>Real Madrid</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="line-after d-flex flex-column ms-2 ps-2">
-                                <small>2</small>
-                                <small>0</small>
-                            </div>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <div class="d-flex align-items-center">
-                            <img class="flag-icon" src="assets/spain.png" alt="">
-                            <div class="d-flex flex-column ms-3">
-                                <small class="text-secondary">spain</small>
-                                <small>la liga</small>
-                            </div>
-                        </div>
-                        <div>
-                            <small class="text-success">ratings</small>
-                        </div>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center mt-2">
-                        <div class="d-flex align-items-center">
-                            <small>22:00</small>
-                            <div class="line-before d-flex flex-column ms-2 ps-2">
-                                <small>Barcelona</small>
-                                <small>Real Madrid</small>
-                            </div>
-                        </div>
-                        <div class="d-flex align-items-center">
-                            <div class="line-after d-flex flex-column ms-2 ps-2">
-                                <small>2</small>
-                                <small>0</small>
-                            </div>
-                            <i class="fa-regular fa-star"></i>
-                        </div>
-                    </div>
-                </li>
-                <li class="list-group-item">
+                <li class="list-group-item" *ngFor="let match of matches">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
                             <img class="flag-icon" src="assets/spain.png" alt="">

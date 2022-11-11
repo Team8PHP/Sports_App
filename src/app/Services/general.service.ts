@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { observable } from 'rxjs';
 import { baseUrl } from 'src/environments/environment';
 
 @Injectable({
@@ -10,6 +11,14 @@ export class GeneralService {
   // Favourites
   getFavourites(id: number) {
     return this.http.get(baseUrl + 'favourites/' + id);
+  }
+  // add to favourites
+  addtoFavourites(data:any) {
+    return this.http.post(baseUrl + 'favourites',data);
+  }
+  // delete from favourites
+  deletefromFavourites(id:number) {
+    return this.http.delete(baseUrl + 'favourites/'+id);
   }
   // League Standings
   getLeagueStandings(id: number) {
@@ -38,8 +47,4 @@ export class GeneralService {
     return this.http.get(baseUrl + 'matches/' + date + 'live');
   }
 
-  // Top players
-  getTopScorers(id: number) {
-    return this.http.get(baseUrl + 'scorers/' + id);
-  }
 }

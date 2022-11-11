@@ -10,7 +10,7 @@ import { HomeViewComponent } from './views/home-view/home-view.component';
 const routes: Routes = [
   { path: '', component: HomeViewComponent },
   { path: 'auth', component: AuthFormComponent },
-  { path: 'league/:id', component: StandingsTopWrapperComponent },
+  { path: 'league/{id}', component: StandingsTopWrapperComponent },
   { path: 'favourites', component: FavouritesViewComponent , canActivate: [AuthGuardService]},
   { path: '**', component: ErrorComponent },
 ];

@@ -31,6 +31,7 @@ import { FavouritesViewComponent } from './views/favourites-view/favourites-view
 import { ErrorComponent } from './views/error/error.component';
 import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
+import { ClubsComponent } from './Components/clubs/clubs.component';
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper
     FavouritesViewComponent,
     ErrorComponent,
     AdSpaceComponent,
-    StandingsTopWrapperComponent
+    StandingsTopWrapperComponent,
+    ClubsComponent
   ],
   imports: [
     BrowserModule,

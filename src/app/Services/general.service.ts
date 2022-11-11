@@ -47,6 +47,9 @@ export class GeneralService {
     return this.http.get(baseUrl + 'matches/' + date + 'live');
   }
   
+  getClubs(){
+    return this.http.get(baseUrl + 'clubs');
+  }
 
   
 }

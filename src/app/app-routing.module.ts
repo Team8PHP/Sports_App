@@ -11,7 +11,9 @@ const routes: Routes = [
   { path: '', component: HomeViewComponent },
   { path: 'auth', component: AuthFormComponent },
   { path: 'league/:id', component: StandingsTopWrapperComponent },
-  { path: 'favourites', component: FavouritesViewComponent , canActivate: [AuthGuardService]}, 
+  { path: 'favourites', component: FavouritesViewComponent 
+  // , canActivate: [AuthGuardService]
+}, 
   { path: '**', component: ErrorComponent }, 
 ];
 

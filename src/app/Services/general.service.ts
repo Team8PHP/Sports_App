@@ -7,18 +7,18 @@ import { baseUrl } from 'src/environments/environment';
   providedIn: 'root',
 })
 export class GeneralService {
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
   // Favourites
   getFavourites(id: number) {
     return this.http.get(baseUrl + 'favourites/' + id);
   }
   // add to favourites
-  addtoFavourites(data:any) {
-    return this.http.post(baseUrl + 'favourites',data);
+  addtoFavourites(data: any) {
+    return this.http.post(baseUrl + 'favourites', data);
   }
   // delete from favourites
-  deletefromFavourites(id:number) {
-    return this.http.delete(baseUrl + 'favourites/'+id);
+  deletefromFavourites(id: number) {
+    return this.http.delete(baseUrl + 'favourites/' + id);
   }
   // League Standings
   getLeagueStandings(id: number) {
@@ -32,6 +32,17 @@ export class GeneralService {
   getLeague(id: number) {
     return this.http.get(baseUrl + 'competition/' + id);
   }
+
+  // clubs
+  getClubs() {
+    return this.http.get(baseUrl + 'clubs');
+  }
+
+  // top scorers
+  getTopScorers(id: number) {
+    return this.http.get(baseUrl + 'scorers/' + id);
+  }
+
   // All Leagues
   getAllLeagues() {
     return this.http.get(baseUrl + 'leagues');

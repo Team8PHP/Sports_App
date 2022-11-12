@@ -1,5 +1,6 @@
 <div class="  bg-white  d-flex flex-column mt-5 col-12 shadow  "
   style="border-radius: 20px;">
+  <h5 class="m-4">Leagues</h5>
 
 
   <!-- <a href="#" class="btn bg-light bg-opacity-10 my-2">  -->
@@ -20,8 +21,8 @@
   <!-- </div>  -->
   <!-- </a> -->
 
-  <a routerLink="league/{{league.id}}" class="btn bg-light bg-opacity-10 my-2" *ngFor="let league of leagues.data">
-    <div class="d-flex  justify-content-around align-content-around">
+  <a routerLink="league/{{league.id}}" class="btn bg-light bg-opacity-10 m-2" *ngFor="let league of leagues.data">
+    <div class="d-flex  justify-content-between align-content-center">
       <img src="{{league.club_image}}" alt="image here" style="width: 50px; height: 50px;">
       <p class="mx-2"> {{league.club_name}}</p>
     </div>

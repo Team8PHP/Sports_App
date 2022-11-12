@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GeneralService } from 'src/app/Services/general.service';
 
@@ -23,6 +23,7 @@ export class ClubsComponent implements OnInit {
     club_id: new FormControl('', Validators.required)
   })
 
+
   getClubs() {
     return this.generalService.getClubs().subscribe((res) => {
       this.clubs = res;
@@ -44,4 +45,5 @@ export class ClubsComponent implements OnInit {
   // deletefavourites(id: any) {
   //   return this.generalService.deletefromFavourites()
   // }
+
 }

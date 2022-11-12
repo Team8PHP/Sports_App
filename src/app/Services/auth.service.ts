@@ -11,17 +11,15 @@ export class AuthService {
   constructor(private http: HttpClient, private token:TokenService) { }
 
   Login(formInput: FormGroup) {
-    return this.http.post(baseUrl + "sanctum/token", formInput.value, {
+    return this.http.post(baseUrl + "auth/login", formInput.value, {
       headers: new HttpHeaders({
         "Accept": "application/json"
       }),
-      observe: "body",
-      responseType: "text"
     })
   }
 
   SignUP(formInput: FormGroup) {
-    return this.http.post(baseUrl + "signup", formInput.value)
+    return this.http.post(baseUrl + "auth/register", formInput.value)
   }
 
   isLoggedin(){

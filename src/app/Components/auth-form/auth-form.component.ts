@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/Services/auth.service';
 import { TokenService } from 'src/app/Services/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-auth-form',
@@ -10,9 +11,12 @@ import { TokenService } from 'src/app/Services/token.service';
 })
 export class AuthFormComponent implements OnInit {
   switchClass = 0;
-  constructor(private AuthService:AuthService,private token:TokenService) { }
-
+  constructor(private AuthService:AuthService,private token:TokenService , private router:  Router) { }
+  authData:any;
   ngOnInit(): void {
+    if(this.token.GetToken()){
+      this.router.navigate(['/']);
+    }
   }
 
   regFormValidation = new FormGroup({
@@ -33,7 +37,9 @@ export class AuthFormComponent implements OnInit {
   Login() {
     if (this.loginFormValidation.valid) {
       this.AuthService.Login(this.loginFormValidation).subscribe(data =>{
-        this.token.CreateToken(data);
+        this.authData= data
+        this.token.CreateToken(this.authData.token,this.authData.user);
+        this.router.navigate(['/']);
       })
       this.loginFormValidation.reset();
     } else {
@@ -44,7 +50,9 @@ export class AuthFormComponent implements OnInit {
   SignUp() {
     if (this.regFormValidation.valid) {
       this.AuthService.SignUP(this.loginFormValidation).subscribe(data =>{
-        this.token.CreateToken(data);
+        this.authData= data
+        this.token.CreateToken(this.authData.token,this.authData.user);
+        this.router.navigate(['/']);
       })
       this.regFormValidation.reset();
     } else {

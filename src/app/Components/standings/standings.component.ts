@@ -15,6 +15,7 @@ export class StandingsComponent implements OnInit {
   id: any;
   standings: any = [];
   finalStanding: any = [];
+  test:any=[];
   ngOnInit(): void {
     this.id = this.route.snapshot.paramMap.get('id');
     this.getLeagueStandings(this.id);
@@ -23,23 +24,11 @@ export class StandingsComponent implements OnInit {
   getLeagueStandings(id: number) {
     return this.generalService.getLeagueStandings(id).subscribe((res) => {
       this.standings = res;
-      this.sortedStandings();
-      console.log(this.finalStanding);
+      this.standings.data.sort(function (a:any, b:any) {
+        if (a.position > b.position) return 1;
+        if (a.position < b.position) return -1;
+        return 0;
+      });
     });
-  }
-
-  sortedStandings() {
-    // this.standings.forEach(team:any => {
-    //   let index = team.data.position
-    // });
-
-    for (let team of this.standings.data) {
-      let index = parseInt(team.position, 10) - 1;
-      // let ind: number =+index  - 1;
-      this.finalStanding.splice(index, 0, team);
-      console.log('index: ' + index)
-      console.log('teams: ' + team)
-
-    }
   }
 }

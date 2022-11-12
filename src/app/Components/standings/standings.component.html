@@ -46,7 +46,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let standing of finalStanding">
+              <tr *ngFor="let standing of standings.data">
                 <!-- ranking -->
                 <td><small>{{standing.position}}</small></td>
                 <!-- team -->
@@ -83,7 +83,7 @@
                   </div>
                 </td>
                 <!-- points -->
-                <td><small>43</small></td>
+                <td><small>{{standing.points}}</small></td>
               </tr>
               <!-- <tr> -->
               <!-- ranking -->

@@ -26,6 +26,11 @@ export class MatchListComponent implements OnInit {
   getByDate(date: string) {
     return this.generalService.getMatches(date).subscribe((res) => {
       this.matches = res;
+      this.matches.matches.sort(function (a:any, b:any) {
+        if (a.time > b.time) return 1;
+        if (a.time < b.time) return -1;
+        return 0;
+      });
       console.log(this.matches);
     });
   }
@@ -33,6 +38,11 @@ export class MatchListComponent implements OnInit {
   getLive(date: string) {
     return this.generalService.getLiveMatches(date).subscribe((res) => {
       this.matches = res;
+      this.matches.matches.sort(function (a:any, b:any) {
+        if (a.time > b.time) return 1;
+        if (a.time < b.time) return -1;
+        return 0;
+      });
       console.log(this.matches);
     });
   }

@@ -9,36 +9,40 @@
                         <span class="slider round"></span>
                     </label>
                 </li>
-                <li class="list-group-item" *ngFor="let match of matches">
+                <div *ngIf="matches; else noMatches">
+                <li class="list-group-item"  *ngFor="let match of matches.match">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">
-                            <img class="flag-icon" src="assets/spain.png" alt="">
+                            <img class="flag-icon" style="border-radius: 50%;" src="{{match.comp.image}}" alt="">
                             <div class="d-flex flex-column ms-3">
-                                <small class="text-secondary">spain</small>
-                                <small>la liga</small>
+                                <small class="text-secondary">{{match.comp.country}}</small>
+                                <small>{{match.comp.name}}</small>
                             </div>
                         </div>
                         <div>
-                            <small class="text-success">ratings</small>
+                            <!-- <small class="text-success">ratings</small> -->
                         </div>
                     </div>
                     <div class="d-flex justify-content-between align-items-center mt-2">
                         <div class="d-flex align-items-center">
-                            <small>22:00</small>
+                            <small>{{match.time}}</small>
                             <div class="line-before d-flex flex-column ms-2 ps-2">
-                                <small>Barcelona</small>
-                                <small>Real Madrid</small>
+                                <small>{{match.homeClub.name}}</small>
+                                <small>{{match.awayClub.name}}</small>
                             </div>
                         </div>
                         <div class="d-flex align-items-center">
                             <div class="line-after d-flex flex-column ms-2 ps-2">
-                                <small>2</small>
-                                <small>0</small>
+                                <small>{{match.home_score}}</small>
+                                <small>{{match.away_score}}</small>
                             </div>
-                            <i class="fa-regular fa-star"></i>
                         </div>
                     </div>
                 </li>
+                </div>
+                <ng-template #noMatches>
+                    <h6 class="m-5 text-center">There are no matches</h6>
+                </ng-template>
             </ul>
         </div>
     </div>

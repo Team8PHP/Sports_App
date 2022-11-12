@@ -20,10 +20,10 @@ export class MatchListComponent implements OnInit {
   }
 
   matches: any;
-  liveChecked:boolean = false;
-  date:string = '2022-11-12'
+  liveChecked: boolean = false;
+  date: string = '2022-11-12'
 
-  getByDate(date:string) {
+  getByDate(date: string) {
     return this.generalService.getMatches(date).subscribe((res) => {
       this.matches = res;
       console.log(this.matches);
@@ -37,12 +37,14 @@ export class MatchListComponent implements OnInit {
     });
   }
 
-  getFav() { }
+  // toggleLive(){
+  //   getLive
+  // }
 
   checkValue(event: any) {
     if (event) {
       this.getLive(this.date);
-    }else{
+    } else {
       this.getByDate(this.date);
     }
   }

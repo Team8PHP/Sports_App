@@ -9,7 +9,7 @@
                         <span class="slider round"></span>
                     </label>
                 </li>
-                <div *ngIf="matches; else noMatches">
+                <div *ngIf="matches.match.length > 0; else noMatches">
                 <li class="list-group-item"  *ngFor="let match of matches.match">
                     <div class="d-flex justify-content-between align-items-center">
                         <div class="d-flex align-items-center">

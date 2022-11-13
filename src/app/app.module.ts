@@ -32,6 +32,7 @@ import { ErrorComponent } from './views/error/error.component';
 import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 import { ClubsComponent } from './Components/clubs/clubs.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -67,13 +68,15 @@ import { ClubsComponent } from './Components/clubs/clubs.component';
     MatSliderModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [
-    {
+    DatePipe,
+    { 
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true,
+      
     },
   ],
   bootstrap: [AppComponent]

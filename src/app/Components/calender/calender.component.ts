@@ -1,7 +1,6 @@
 import { getLocaleDateFormat } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-
-
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-calender',
@@ -10,10 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CalenderComponent implements OnInit {
   public minDate: Date = new Date ("01/01/2015");
-  public maxDate: Date = new Date ("08/27/2030");
-  public value: Date = new Date("05/07/2017");
+  public maxDate: Date = new Date ("01/01/2030");
+  public value: Date = new Date();
  
-  constructor() { }
+  constructor(private datePipe: DatePipe) { }
 
   ngOnInit(): void {
   }
@@ -21,8 +20,11 @@ export class CalenderComponent implements OnInit {
     console.log(this.value);
   }
   onChange(args:any) {
-    console.log(Date.parse(args.value))
-    console.log(args.value)
+    // console.log(Date.parse(args.value))
+    // console.log(args.value)
     this.value= args.value;
+  let search =  this.datePipe.transform(args.value,'yyyy-MM-dd')
+  console.log(search)
+   
 }
 }

@@ -49,7 +49,7 @@ export class AuthFormComponent implements OnInit {
 
   SignUp() {
     if (this.regFormValidation.valid) {
-      this.AuthService.SignUP(this.loginFormValidation).subscribe(data =>{
+      this.AuthService.SignUP(this.regFormValidation).subscribe(data =>{
         this.authData= data
         this.token.CreateToken(this.authData.token,this.authData.user);
         this.router.navigate(['/']);

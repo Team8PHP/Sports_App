@@ -21,6 +21,9 @@
             regFormValidation.controls['password'].touched)">
                 <small class="alert text-danger mt-1">*Password min length is 5</small>
             </div>
+            <div *ngIf="signupErrorMsg !='false'">
+                <small class="alert text-danger mt-1">{{signupErrorMsg}}</small>
+            </div>
             <button class="btn btn-success px-3">Sign up</button>
         </form>
     </div>
@@ -42,6 +45,9 @@
             <div *ngIf="loginFormValidation.controls['password'].invalid && (loginFormValidation.controls['password'].dirty ||
             loginFormValidation.controls['password'].touched)">
                 <small class="alert text-danger mt-1">*Password min length is 5</small>
+            </div>
+            <div *ngIf="loginErrorMsg !='false'">
+                <small class="alert text-danger mt-1">{{loginErrorMsg}}</small>
             </div>
             <button class="btn btn-success px-3">Sign In</button>
         </form>

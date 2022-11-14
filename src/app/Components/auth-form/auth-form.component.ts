@@ -11,8 +11,11 @@ import { Router } from '@angular/router';
 })
 export class AuthFormComponent implements OnInit {
   switchClass = 0;
-  constructor(private AuthService:AuthService,private token:TokenService , private router:  Router) { }
   authData:any;
+  signupErrorMsg:string="false";
+  loginErrorMsg:string="false";
+  constructor(private AuthService:AuthService,private token:TokenService , private router:  Router) { }
+  
   ngOnInit(): void {
     if(this.token.GetToken()){
       this.router.navigate(['/']);
@@ -32,14 +35,19 @@ export class AuthFormComponent implements OnInit {
 
   setSwitchClass() {
     this.switchClass ^= 1;
+    this.loginErrorMsg='false';
+    this.signupErrorMsg='false';
   }
 
   Login() {
     if (this.loginFormValidation.valid) {
+      this.loginErrorMsg='false';
       this.AuthService.Login(this.loginFormValidation).subscribe(data =>{
         this.authData= data
         this.token.CreateToken(this.authData.token,this.authData.user);
         this.router.navigate(['/']);
+      }, resError =>{
+        this.loginErrorMsg=resError.error.message;
       })
       this.loginFormValidation.reset();
     } else {
@@ -49,10 +57,13 @@ export class AuthFormComponent implements OnInit {
 
   SignUp() {
     if (this.regFormValidation.valid) {
+      this.signupErrorMsg='false';
       this.AuthService.SignUP(this.regFormValidation).subscribe(data =>{
         this.authData= data
         this.token.CreateToken(this.authData.token,this.authData.user);
         this.router.navigate(['/']);
+      }, resError =>{
+        this.signupErrorMsg=resError.error.errors.email[0];
       })
       this.regFormValidation.reset();
     } else {

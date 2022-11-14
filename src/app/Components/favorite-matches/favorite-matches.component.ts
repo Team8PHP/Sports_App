@@ -1,13 +1,13 @@
-import { Component, ElementRef, OnInit, SimpleChanges, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CalenderService } from 'src/app/Services/calender.service';
 import { GeneralService } from 'src/app/Services/general.service';
 
 @Component({
-  selector: 'app-match-list',
-  templateUrl: './match-list.component.html',
-  styleUrls: ['./match-list.component.css']
+  selector: 'app-favorite-matches',
+  templateUrl: './favorite-matches.component.html',
+  styleUrls: ['./favorite-matches.component.css']
 })
-export class MatchListComponent implements OnInit {
+export class FavoriteMatchesComponent implements OnInit {
 
   constructor(private generalService: GeneralService,  public calenderService : CalenderService) { }
 
@@ -26,7 +26,7 @@ export class MatchListComponent implements OnInit {
   date:any = this.calenderService.CalenderDate
 
   getByDate(date: any) {
-    return this.generalService.getMatches(date).subscribe((res) => {
+    return this.generalService.getFavMatches(date).subscribe((res) => {
       this.matches = res;
       // console.log(this.matches);
       // this.matches.matches.sort(function (a:any, b:any) {
@@ -38,7 +38,7 @@ export class MatchListComponent implements OnInit {
   }
 
   getLive(date: any) {
-    return this.generalService.getLiveMatches(date).subscribe((res) => {
+    return this.generalService.getLiveFavMatches(date).subscribe((res) => {
       this.matches = res;
       // this.matches.matches.sort(function (a:any, b:any) {
       //   if (a.time > b.time) return 1;
@@ -55,5 +55,6 @@ export class MatchListComponent implements OnInit {
       this.getByDate(this.date);
     }
   }
+
 
 }

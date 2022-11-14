@@ -58,4 +58,14 @@ export class GeneralService {
     return this.http.get(baseUrl + 'matches/live/' + date );
   }
 
+  // favorite teams matches
+  getFavMatches(date: string) {
+    return this.http.get(baseUrl + 'matches/' + date);
+  }
+
+  // favorite teams live matches
+  getLiveFavMatches(date: string) {
+    return this.http.get(baseUrl + 'matches/live/' + date );
+  }
+
 }

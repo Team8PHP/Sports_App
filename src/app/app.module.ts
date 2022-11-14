@@ -33,6 +33,7 @@ import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 import { ClubsComponent } from './Components/clubs/clubs.component';
 import { DatePipe } from '@angular/common';
+import { FavoriteMatchesComponent } from './Components/favorite-matches/favorite-matches.component';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { DatePipe } from '@angular/common';
     ErrorComponent,
     AdSpaceComponent,
     StandingsTopWrapperComponent,
-    ClubsComponent
+    ClubsComponent,
+    FavoriteMatchesComponent
   ],
   imports: [
     BrowserModule,

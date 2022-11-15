@@ -37,6 +37,7 @@ import { FavoriteMatchesComponent } from './Components/favorite-matches/favorite
 import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
 import { AdminPostsComponent } from './Components/admin-posts/admin-posts.component';
 import { AdminUsersComponent } from './Components/admin-users/admin-users.component';
+import { ClubComponent } from './components/club/club.component';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { AdminUsersComponent } from './Components/admin-users/admin-users.compon
     FavoriteMatchesComponent,
     AdminDashboardComponent,
     AdminPostsComponent,
-    AdminUsersComponent
+    AdminUsersComponent,
+    ClubComponent
   ],
   imports: [
     BrowserModule,

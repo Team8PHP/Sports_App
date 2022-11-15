@@ -34,6 +34,9 @@ import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper
 import { ClubsComponent } from './Components/clubs/clubs.component';
 import { DatePipe } from '@angular/common';
 import { FavoriteMatchesComponent } from './Components/favorite-matches/favorite-matches.component';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { AdminPostsComponent } from './Components/admin-posts/admin-posts.component';
+import { AdminUsersComponent } from './Components/admin-users/admin-users.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +62,10 @@ import { FavoriteMatchesComponent } from './Components/favorite-matches/favorite
     AdSpaceComponent,
     StandingsTopWrapperComponent,
     ClubsComponent,
-    FavoriteMatchesComponent
+    FavoriteMatchesComponent,
+    AdminDashboardComponent,
+    AdminPostsComponent,
+    AdminUsersComponent
   ],
   imports: [
     BrowserModule,

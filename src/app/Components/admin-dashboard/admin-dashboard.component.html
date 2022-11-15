@@ -1,0 +1,16 @@
+<div class="px-0 my-0 bg-light full-width">
+    <div class="d-flex">
+        <div class="d-flex align-items-center " id="navbar"> <button class="navbar-toggler" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbar-items" aria-controls="navbarSupportedContent"
+                aria-expanded="true" aria-label="Toggle navigation"> <span class="fas fa-bars"></span> </button><p class="text-dark ms-2">Dashboard</p></div>
+    </div>
+    <div class="d-md-flex">
+        <ul id="navbar-items" class="p-0">
+            <a routerLink="/admin/posts"><li>Posts</li></a>
+            <a routerLink="/admin/users"><li>Users</li></a>
+        </ul>
+        <div id="topnavbar">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

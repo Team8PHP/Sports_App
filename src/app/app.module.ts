@@ -34,6 +34,7 @@ import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper
 import { ClubsComponent } from './Components/clubs/clubs.component';
 import { DatePipe } from '@angular/common';
 import { FavoriteMatchesComponent } from './Components/favorite-matches/favorite-matches.component';
+import { ClubComponent } from './components/club/club.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +60,8 @@ import { FavoriteMatchesComponent } from './Components/favorite-matches/favorite
     AdSpaceComponent,
     StandingsTopWrapperComponent,
     ClubsComponent,
-    FavoriteMatchesComponent
+    FavoriteMatchesComponent,
+    ClubComponent
   ],
   imports: [
     BrowserModule,

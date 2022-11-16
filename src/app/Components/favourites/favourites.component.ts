@@ -12,7 +12,7 @@ export class FavouritesComponent implements OnInit {
   constructor(private generalService: GeneralService) {}
   favourites: any = [];
   ngOnInit(): void {
-    this.getFavourites(1);
+    this.getFavourites(2);
   }
 
   formData = new FormGroup({
@@ -33,6 +33,7 @@ export class FavouritesComponent implements OnInit {
     // return this.generalService.addtoFavourites()
   }
   deletefavourites(id:number){
+   
     return this.generalService.deletefromFavourites(id)
   }
 }

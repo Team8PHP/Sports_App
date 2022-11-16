@@ -32,7 +32,7 @@ export class FavouritesComponent implements OnInit {
     console.log(event.target)
     // return this.generalService.addtoFavourites()
   }
-  deletefavourites(){
-    // return this.generalService.deletefromFavourites()
+  deletefavourites(id:number){
+    return this.generalService.deletefromFavourites(id)
   }
 }

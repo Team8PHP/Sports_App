@@ -1,0 +1,354 @@
+/*Baseline/Vertical Rhythm: 8px;*/
+/*@import url(https://basehold.it/8);*/
+
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  html,
+  body {
+    font-family: "Roboto", helvetica, arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-size: 62.5%;
+  }
+  
+  body {
+    background: #fafafa;
+    color: #333;
+    /*Sometimes fonts don't display optimally on all devices*/
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    /*font-weight:300;*/
+  }
+  
+  a,.user {
+    text-decoration: none;
+    color: #88d;
+  }
+  
+  a:hover {
+    color: #5b5;
+  }
+  
+  a.button {
+    display: inline-block;
+    text-align: center;
+    padding: 14px 24px;
+    font-weight: 600;
+    cursor: pointer;
+    line-height: 1;
+    background: #88d;
+  }
+  p,
+  li,
+  time {
+    font-size: 1.6rem;
+    line-height: 3.2rem;
+    margin: 0 0 2.4rem;
+  }
+  [class*="card-"] h1,
+  [class*="card-"] h2 {
+    font: 600 2.4rem/3.2rem "PT Serif", palatino, times, serif;
+    margin: 0 0 .8rem;
+    padding: 0;
+  }
+  figure {
+    position: relative;
+    margin: 0;
+    line-height: 0;
+  }
+  
+  img {
+    border: 0;
+    height: auto;
+    max-width: 100%;
+  }
+  
+  img:hover {
+    filter: alpha(opacity=9000);
+    opacity: 0.90;
+    filter: alpha(opacity=90);
+  }
+  
+  article,
+  figure,
+  footer,
+  header,
+  main {
+    display: block;
+  }
+  /*--- Clearings ---*/
+  
+  header:before,
+  header:after,
+  main:before,
+  main:after {
+    content: "";
+    display: table;
+  }
+  
+  header:after,
+  main:after {
+    clear: both;
+  }
+  
+  main {
+    position: relative;
+    width: 1200px;
+    max-width: 96%;
+    margin: 0 auto;
+  }
+  
+  
+  /*=== Avatars === */
+  
+  img[class*="avatar-"] {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 6px;
+  }
+  
+  img[class*="avatar-"] {
+    border-radius: 50%
+  }
+  
+  img.avatar-32 {
+    width: 32px;
+    height: 32px;
+  }
+  
+  /*=== Cards === */
+  
+  [class*="card-"],
+  [class*="card-"]>a {
+    position: relative;
+    list-style: none;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 6rem;
+    width: 100%;
+    /*align-items: center;
+    /*min-height: 100vh;*/
+  }
+  
+  
+  [class*="card-"] figure img {
+    margin: 0 auto;
+    display: block;
+  }
+  /*==  Horizontal Cards / Images inside container: 
+  object-fit to re-frame images rather than just stretch and resize them  === */
+  
+  @media (min-width: 800px) and (max-width: 1200px) {
+  [class*="card-"] figure {
+      vertical-align: middle;
+      text-align: center;
+      min-width: 250px;
+      max-height: 100%;
+  }
+  [class*="card-"] figure img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+      object-fit: cover;
+   }
+  }
+  .flex-content {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.4rem;
+  }
+  .flex-content p,.flex-content li{
+  position: relative;
+  font-size: 1.6rem;
+  line-height: 3.2rem;
+  }
+  [class*="card-"] .flex-content p:last-child{margin-bottom: 0;}
+  
+  [class*="card-"] p.user {
+    position: relative;
+    line-height: .8rem;
+    font-size: 1.4rem;
+  }
+  [class*="card-"] p.subinfo {
+    margin-bottom: .8rem;
+  }
+  /*== Social Card - Header === */
+  [class*="card-"] header p.user {
+    margin: 0;
+  }
+  
+  [class*="card-"] .user img[class*="avatar-"] {
+    float: left;
+  }
+  [class*="card-"] .user span {
+    display: block;
+    margin-top: 1.3rem;
+  }
+  
+  [class*="card-"] .flex-content a.button {
+    float:right;
+    font-weight:600;
+    padding: .8rem;
+    border-radius: 3px;
+  }
+  
+  /* Featured/Popular/Buy*/
+  
+  .ribbon-buy {
+    position: absolute;
+    z-index: 9999;
+    top: -1px;
+    right: 3.2rem;
+    display: block;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+    /* text-indent: -4000px; */
+    font-size: 1.6rem;
+    padding-top: 2.6rem;
+    font-weight: 600;
+  }
+  
+  .ribbon-buy:after {
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    content: "";
+    border-bottom-width: 8px;
+    -webkit-transform: scale(1.0001);
+    -moz-transform: scale(1.0001);
+  }
+  
+  .ribbon-buy:hover {
+    height: 50px;
+  }
+  
+  @media (min-width: 800px) {
+    /*== Cards (Sizes) - Reference: figure img:-70,60,50,40,30... === */
+    .card-30 figure,
+    .card-70 .flex-content {
+      width: 30%;
+    }
+    .card-40 figure,
+    .card-60 .flex-content {
+      width: 40%;
+    }
+    .card-50 figure,
+    .card-50 .flex-content {
+      width: 50%;
+    }
+    .card-60 figure,
+    .card-40 .flex-content {
+      width: 60%;
+    }
+    .card-70 figure,
+    .card-30 .flex-content {
+      width: 70%;
+    }
+    [class*="card-"]:nth-child(odd) figure {
+      order: 0
+    }
+    [class*="card-"]:nth-child(even) figure {
+      order: 1;
+    }
+    [class*="card-"]:nth-child(odd) .ribbon-buy {
+      left: 3.2rem;
+    }
+    .flex-content {
+      padding: 3.2rem 3.2rem 2.4rem;
+    }
+  }
+  [class*="card-"] header {
+    padding-bottom:1.6rem;
+    margin-bottom: 1.4rem;
+  }
+  
+  /*== Card - Mobile === */
+  
+  @media (max-width: 799px) {
+    [class*="card-"],
+    [class*="card-"]>a {
+      flex-flow: column;
+    }
+    .card figure,
+    .card header {
+      width: 100%
+    }
+  
+  
+    /*== Mobile Card - Header === */
+    [class*="card-"] header {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 2.4rem;
+      margin-bottom:0;
+    }
+    [class*="card-"].social figure {
+      margin-top: 8.1rem;
+    }
+  }
+  
+  
+  
+  
+  @media (max-width: 500px) {
+    [class*="card-"] footer a[class*="bt-"] {
+      text-indent: -4000px;
+      width: 24px;
+    }
+  }
+    
+  
+  .content-wrapper {
+      margin: 0 auto;
+      max-width: 1200px;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+  
+    .news-card {
+      border: 0px solid aqua;
+      margin: 0.5rem;
+      position: relative;
+      height: auto;
+      overflow: hidden;
+      border-radius: 0.5rem;
+      flex: 1;
+      min-width: 290px;
+      box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+      -webkit-backface-visibility: hidden;
+      -moz-backface-visibility: hidden;
+      -webkit-transform: translate3d(0, 0, 0);
+      -moz-transform: translate3d(0, 0, 0);
+    }
+    .news-card__image {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      transition: transform 3s ease;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: relative;
+      z-index: -1;
+    }

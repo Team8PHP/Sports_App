@@ -1,0 +1,16 @@
+<div class="content-wrapper">
+    <div class="news-card" *ngFor="let news of otherNews">
+      <a href="{{news.news_link}}" target="_blank" class="news-card__card-link"></a>
+      <img src="{{news.news_image }}" alt="" class=" news-card__image ">
+      <div class="news-card__text-wrapper">
+        <h4 class="news-card__title">{{news.title }}
+        </h4>
+        <div class="news-card__post-date">{{news.date }} {{news.time }}</div>
+        <div class="news-card__details-wrapper">
+          <p class="news-card__excerpt">{{news.description}}</p>
+          <a href="{{news.news_link}}"
+            class="news-card__read-more" target="_blank">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>

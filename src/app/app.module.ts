@@ -32,6 +32,8 @@ import { ErrorComponent } from './views/error/error.component';
 import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 import { ClubsComponent } from './Components/clubs/clubs.component';
+import { NewsCardComponent } from './Components/news-card/news-card.component';
+import { MainNewsComponent } from './Components/main-news/main-news.component';
 
 @NgModule({
   declarations: [
@@ -56,7 +58,9 @@ import { ClubsComponent } from './Components/clubs/clubs.component';
     ErrorComponent,
     AdSpaceComponent,
     StandingsTopWrapperComponent,
-    ClubsComponent
+    ClubsComponent,
+    NewsCardComponent,
+    MainNewsComponent
   ],
   imports: [
     BrowserModule,

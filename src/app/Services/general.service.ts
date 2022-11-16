@@ -62,7 +62,7 @@ export class GeneralService {
 
   // live matches
   getLiveMatches(date: string) {
-    return this.http.get(baseUrl + 'matches/live/' + date );
+    return this.http.get(baseUrl + 'matches/live');
   }
 
   // favorite teams matches

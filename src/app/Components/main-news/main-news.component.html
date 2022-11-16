@@ -1,1 +1,17 @@
-<p>main-news works!</p>
+<div class="content-wrapper">
+  <article class="card-60 social news-card ">
+      <figure> <img src="{{latestNews.news_image }}" alt="La Sagrada Familia" class=""></figure>
+
+      <div class="flex-content">
+
+          <h4 class="">
+              {{latestNews.title }}
+          </h4>
+          <p>
+              {{latestNews.description }}
+          </p>
+          <a href="{{latestNews.news_link }}"
+              class="news-card__read-more" target="_blank">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
+      </div>
+  </article>
+</div>

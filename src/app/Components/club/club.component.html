@@ -69,7 +69,7 @@
               <p class="fw-bold ">Tournaments</p>
               <div class="row ps-2 gap-3">
                 <div class="col-3" *ngFor="let competition of club.data.competitions">
-                  <a routerLink="league/{{competition.id}}" class="text-decoration-none text-black">
+                  <a routerLink="/league/{{competition.id}}" class="text-decoration-none text-black">
                     <div class="col-12">
                       <img src="{{competition.image}}" alt="" width="60px" height="60px">
                       <small class="text-muted fw-bold d-block" style="font-size:11px ;">{{competition.name}}</small>

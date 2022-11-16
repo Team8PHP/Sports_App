@@ -12,9 +12,10 @@ export class NewsCardComponent implements OnInit {
   constructor(private news:NewService) { }
 
   ngOnInit(): void {
+    this.getOtherNews()
   }
 
-  getOther(){
+  getOtherNews(){
     return this.news.GetOtherNews().subscribe(res =>{
         this.returnNews= res
         this.otherNews = this.returnNews.data

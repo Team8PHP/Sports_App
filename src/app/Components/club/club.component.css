@@ -6,20 +6,26 @@
 
 /* league-wrapper styling */
 .league-wrapper {
-  background:linear-gradient(to right,rgb(148, 247, 148) 0%, rgb(108, 241, 108) 25%,rgb(84, 245, 84) 50%,rgb(84, 127, 192) 75%,rgb(78, 131, 192) 100%);
+  background: linear-gradient(
+    to right,
+    rgb(148, 247, 148) 0%,
+    rgb(108, 241, 108) 25%,
+    rgb(84, 245, 84) 50%,
+    rgb(84, 127, 192) 75%,
+    rgb(78, 131, 192) 100%
+  );
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  /* width: 65vw; */
   padding: 3%;
   border-radius: 15px;
 }
 
-.league-wrapper .league-image {
-  z-index: 10;
+.league-data .league-image {
+  /* z-index: 10; */
   width: 15%;
-  background-color: white;
+  background-color: transparent;
   border-radius: 15px;
 }
 
@@ -55,9 +61,10 @@
   height: 100%;
 }
 
-.text-color{
+.text-color {
   color: white;
 }
+
 /* ******************************************************************************************************* */
 /* ******************************************************************************************************* */
 /* Responsive design */
@@ -66,14 +73,13 @@
 @media (max-width: 767px) {
   .league-wrapper {
     background: white;
-    /* width: 100vw; */
     padding: 2%;
     border-radius: none;
     border: none;
   }
   .league-wrapper .league-image {
     width: 18%;
-    background-color: white;
+    background-color: transparent;
     border-radius: none;
   }
   .league-overlay {
@@ -88,10 +94,10 @@
     display: flex;
     width: 100%;
   }
-  .flag-img{
+  .flag-img {
     width: 7%;
   }
-  .text-color{
+  .text-color {
     color: black;
   }
 }

@@ -23,19 +23,20 @@ export class ClubComponent implements OnInit {
   getClub(id: number) {
     return this.generalService.getClub(id).subscribe((res) => {
       this.club = res;
+
       // this.club.data.players.sort(function (a:any, b:any) {
       //   if (a.position > b.position) return 1;
       //   if (a.position < b.position) return -1;
       //   return 0;
       // });
-      this.club.data.players.sort(function (a: any , b:any) {
-        if (a.position === 'Defence') return -1;
-        if (b.position === 'Midfield') return -1;
+      this.club.data.players.sort(function (a: any, b: any) {
+        if (a.position === 'Midfield') return -1;
+        if (b.position === 'Defence') return -1;
         return 0;
       });
-      this.club.data.players.sort(function (a: any , b:any) {
-        if (a.position === 'Goalkeeper') return -1;
-        if (b.position === 'Offence') return -1;
+      this.club.data.players.sort(function (a: any, b: any) {
+        if (a.position === 'Offence') return -1;
+        if (b.position === 'Goalkeeper') return -1;
         return 0;
       });
       console.log(this.club);

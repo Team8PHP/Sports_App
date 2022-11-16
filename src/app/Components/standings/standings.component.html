@@ -14,7 +14,7 @@
       <!-- start clubs standings -->
       <div class="row">
         <div class="col-12">
-          <table class="table table-hover table-responsive">
+          <table class="table table-hover ">
             <thead>
               <tr>
                 <td class="text-muted col-1"><small>#</small></td>
@@ -24,7 +24,7 @@
                 <td class="text-muted "><small>D</small></td>
                 <td class="text-muted "><small>L</small></td>
                 <td class="text-muted col-1"><small>Goals</small></td>
-                <td class="text-muted text-center d-none "><small>Last 5</small></td>
+                <td class="text-muted text-center d-lg-none d-md-none"><small>Last 5</small></td>
                 <td class="text-muted"><small>Pts</small></td>
               </tr>
             </thead>
@@ -52,11 +52,10 @@
                 <!-- goals -->
                 <td><small>{{standing.goals_for}}:{{standing.goals_against}}</small></td>
                 <!-- last 5 matches -->
-                <td class="col-lg-3 d-sm-none">
+                <td class="col-lg-3 d-lg-none d-md-none">
                   <div class="row justify-content-center ">
                     <div class="col-12 rounded-3">
                       <div class="row justify-content-center gap-1">
-
                         <div class="col-2 p-1 rounded-3 fw-bold text-white text-center"
                           [ngClass]="{'bg-success':form =='W','bg-secondary':form =='D','bg-danger':form =='L'}"
                           *ngFor="let form of standing.form"><small>{{form}}</small>

@@ -9,8 +9,8 @@
   <!-- start league data -->
   <div class="d-flex league-data gap-4">
     <!-- league image -->
-    <div class="league-image">
-      <img src="{{club.data.club_image}}" alt="" width="100rem" height="100rem">
+    <div class="league-image" style="background-color: transparent !important;">
+      <img src="{{club.data.club_image}}" alt="" width="100%" height="100%">
     </div>
     <!-- league name and country -->
     <div class="league-name-country justify-content-center gap-2">
@@ -33,7 +33,6 @@
 <!-- end league wrapper -->
 <!-- </section> -->
 <!-- end league section -->
-
 <!-- Team info -->
 <div class="row mb-3">
   <div class="col-lg-8 col-md-12 col-sm-12">
@@ -106,7 +105,12 @@
             <td><small>{{player.name}}</small></td>
             <td class="text-center fw-bold"><small
                 [ngClass]="{'text-danger':player.position =='Offence','text-success':player.position =='Midfield','text-primary':player.position =='Defence','text-warning':player.position=='Goalkeeper'}">
-                {{player.position}}</small></td>
+                {{player.position}}</small>
+                <small *ngIf="!player.position" class="text-success">
+                  Midfield
+                </small>
+
+            </td>
             <td class="text-center"><small>{{player.birth_date}}</small></td>
             <td class="text-center"><small>{{player.nationality}}</small> </td>
           </tr>

@@ -37,6 +37,10 @@ export class GeneralService {
   getClubs() {
     return this.http.get(baseUrl + 'clubs');
   }
+  // Club
+  getClub(id:number) {
+    return this.http.get(baseUrl + 'club/'+id);
+  }
 
   // top scorers
   getTopScorers(id: number) {
@@ -55,6 +59,16 @@ export class GeneralService {
 
   // live matches
   getLiveMatches(date: string) {
+    return this.http.get(baseUrl + 'matches/live/' + date );
+  }
+
+  // favorite teams matches
+  getFavMatches( date: string) {
+    return this.http.get(baseUrl + 'matches/favourites/' +"/"+ date);
+  }
+
+  // favorite teams live matches
+  getLiveFavMatches(date: string) {
     return this.http.get(baseUrl + 'matches/live/' + date );
   }
 

@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { GeneralService } from 'src/app/Services/general.service';
+import { TokenService } from 'src/app/Services/token.service';
 
 @Component({
   selector: 'app-clubs',
@@ -9,7 +10,7 @@ import { GeneralService } from 'src/app/Services/general.service';
 })
 export class ClubsComponent implements OnInit {
 
-  constructor(private generalService: GeneralService) { }
+  constructor(private generalService: GeneralService ,private tokenservice: TokenService ) { }
 
 
   ngOnInit(): void {
@@ -30,8 +31,9 @@ export class ClubsComponent implements OnInit {
     });
   }
   addfavourites(id: any) {
+   
     this.formData.patchValue({
-      user_id: '1',
+      user_id:  this.tokenservice.GetUser(),
       club_id: id
     });
 
@@ -43,7 +45,7 @@ export class ClubsComponent implements OnInit {
     });
   }
   // deletefavourites(id: any) {
-  //   return this.generalService.deletefromFavourites()
+  //   return this.generalService.deletefromFavourites(id)
   // }
 
 }

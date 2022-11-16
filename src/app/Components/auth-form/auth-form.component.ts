@@ -45,6 +45,7 @@ export class AuthFormComponent implements OnInit {
       this.AuthService.Login(this.loginFormValidation).subscribe(data =>{
         this.authData= data
         this.token.CreateToken(this.authData.token,this.authData.user);
+        this.AuthService.getUser();
         this.router.navigate(['/']);
       }, resError =>{
         this.loginErrorMsg=resError.error.message;
@@ -61,6 +62,7 @@ export class AuthFormComponent implements OnInit {
       this.AuthService.SignUP(this.regFormValidation).subscribe(data =>{
         this.authData= data
         this.token.CreateToken(this.authData.token,this.authData.user);
+        this.AuthService.getUser();
         this.router.navigate(['/']);
       }, resError =>{
         this.signupErrorMsg=resError.error.errors.email[0];

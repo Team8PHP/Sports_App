@@ -8,11 +8,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active" routerLink="/" >Home</a>
+          <a class="nav-link" aria-current="page" [routerLinkActiveOptions]="{exact:true}" routerLinkActive="active"
+            routerLink="/">Home</a>
         </li>
         <li class="nav-item">
           <div class="d-flex">
-            <a class="nav-link" routerLinkActive="active" routerLink="/favourites" >Favourites</a>
+            <a class="nav-link" routerLinkActive="active" routerLink="/favourites">Favourites</a>
           </div>
         </li>
         <li class="nav-item">
@@ -31,17 +32,20 @@
         </li>
       </ul>
       <ul *ngIf="auth.isLoggedin() ; else loginBLock" class="navbar-nav ms-auto">
-        <li class="nav-item">
-            <a class="nav-link" style="cursor: pointer;" (click)="signOut()" >Logout</a>
+        <li *ngIf="auth.user.role == 'admin'" class="nav-item">
+          <a class="nav-link"  routerLinkActive="active" routerLink="/admin">Admin</a>
         </li>
-    </ul>
-    <ng-template #loginBLock>
-    <ul class="navbar-nav ms-auto">
         <li class="nav-item">
+          <a class="nav-link" style="cursor: pointer;" (click)="signOut()">Logout</a>
+        </li>
+      </ul>
+      <ng-template #loginBLock>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" routerLink="/auth">Login</a>
-        </li>
-    </ul>
-</ng-template>
+          </li>
+        </ul>
+      </ng-template>
     </div>
   </div>
 </nav>

@@ -1,5 +1,4 @@
-<div class="  bg-white  d-flex flex-column mt-5 col-12 shadow  "
-  style="border-radius: 20px;">
+<div class="  bg-white  d-flex flex-column mt-5 col-12 shadow  " style="border-radius: 20px;">
   <h5 class="m-4">Leagues</h5>
 
 
@@ -17,16 +16,22 @@
         <a class="dropdown-item" routerLink="">Something else here</a>
       </div>
     </div>
-     <p class="mx-2"> league 1</p> -->
+    <p class="mx-2"> league 1</p> -->
   <!-- </div>  -->
   <!-- </a> -->
-
-  <a routerLink="league/{{league.id}}" class="btn bg-light bg-opacity-10 m-2" *ngFor="let league of leagues.data">
-    <div class="d-flex  justify-content-between align-content-center">
-      <img src="{{league.club_image}}" alt="image here" style="width: 50px; height: 50px;">
-      <p class="mx-2"> {{league.club_name}}</p>
+  <div *ngIf="leagues.data; else loading">
+    <a routerLink="league/{{league.id}}" class="btn bg-light bg-opacity-10 m-2" *ngFor="let league of leagues.data">
+      <div class="d-flex  justify-content-between align-content-center">
+        <img src="{{league.club_image}}" alt="image here" style="width: 50px; height: 50px;">
+        <p class="mx-2"> {{league.club_name}}</p>
+      </div>
+    </a>
+  </div>
+  <ng-template #loading  style="height: 50vh;">
+    <div class="spinner-border text-primary m-auto text-center my-5"  role="status">
+      <span class="sr-only">Loading...</span>
     </div>
-  </a>
+  </ng-template>
 
   <!-- <a href="#" class="btn bg-light bg-opacity-10 my-2">
     <div class="d-flex  justify-content-around align-content-around">

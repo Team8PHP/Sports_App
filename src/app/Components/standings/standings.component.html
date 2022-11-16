@@ -3,7 +3,7 @@
     <!-- start standings section -->
     <!-- <section> -->
     <!-- start standings table -->
-    <div class="col-lg-12 p-lg-1 shadow-lg border border-light border-3 rounded-3">
+    <div class="col-12 p-lg-1 shadow-lg border border-light border-3 rounded-3">
       <!-- start table title -->
       <div class="row justify-content-center text-center">
         <div class="col-6">
@@ -11,23 +11,6 @@
         </div>
       </div>
       <!-- end table title -->
-      <!-- start table buttons -->
-      <!-- <div class="row ps-3">
-      <ul class="nav nav-pills">
-        <li class="nav-item">
-          <a class="nav-link fw-bold fs-6 " aria-current="page" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-
-      </ul>
-
-    </div> -->
-      <!-- end table buttons -->
       <!-- start clubs standings -->
       <div class="row">
         <div class="col-12">
@@ -35,45 +18,51 @@
             <thead>
               <tr>
                 <td class="text-muted col-1"><small>#</small></td>
-                <td class="text-muted col-6"><small>Team</small></td>
-                <td class="text-muted"><small>P</small></td>
-                <td class="text-muted "><small>W</small></td>
-                <td class="text-muted "><small>D</small></td>
-                <td class="text-muted "><small>L</small></td>
+                <td class="text-muted col-lg-6 col-md-7 col-sm-6"><small>Team</small></td>
+                <td class="text-muted col-lg-1 col-md-1 col-sm-1"><small>P</small></td>
+                <td class="text-muted no-small"><small>W</small></td>
+                <td class="text-muted no-small"><small>D</small></td>
+                <td class="text-muted no-small"><small>L</small></td>
                 <td class="text-muted col-1"><small>Goals</small></td>
-                <td class="text-muted text-center col-3"><small>Last 5</small></td>
-                <td class="text-muted"><small>Pts</small></td>
+                <td class="text-muted text-center col-3 no-small"><small>Last 5</small></td>
+                <td class="text-muted col-1"><small>Pts</small></td>
               </tr>
             </thead>
             <tbody>
               <tr *ngFor="let standing of standings.data">
                 <!-- ranking -->
-                <td><small>{{standing.position}}</small></td>
+                <td class="col-1"><small>{{standing.position}}</small></td>
                 <!-- team -->
                 <td>
-                  <div class="row">
-                    <div class="col-2"><img src="{{standing.club_image}}" alt="" width="100%" height="100%"></div>
-                    <div class="col-8">
-                      <small>{{standing.club_name}}</small>
+                  <a class="text-decoration-none text-black" routerLink="/club/{{standing.club_id}}">
+
+                    <div class="row">
+                      <div class="col-3 image-small"><img src="{{standing.club_image}}" alt="" width="100%"
+                          height="100%"></div>
+                      <div class="col-8 col-md-9 col-sm-8 font">
+                        <small>{{standing.club_name}}</small>
+                      </div>
                     </div>
-                  </div>
+
+
+                  </a>
+
                 </td>
                 <!-- played -->
                 <td><small>{{standing.matches_played}}</small></td>
                 <!-- wins -->
-                <td><small>{{standing.wins}}</small></td>
+                <td class="no-small"><small>{{standing.wins}}</small></td>
                 <!-- draws -->
-                <td><small>{{standing.draws}}</small></td>
+                <td class="no-small"><small>{{standing.draws}}</small></td>
                 <!-- loses -->
-                <td><small>{{standing.losses}}</small></td>
+                <td class="no-small"><small>{{standing.losses}}</small></td>
                 <!-- goals -->
                 <td><small>{{standing.goals_for}}:{{standing.goals_against}}</small></td>
                 <!-- last 5 matches -->
-                <td>
+                <td class="no-small">
                   <div class="row justify-content-center ">
                     <div class="col-12 rounded-3">
                       <div class="row justify-content-center gap-1">
-
                         <div class="col-2 p-1 rounded-3 fw-bold text-white text-center"
                           [ngClass]="{'bg-success':form =='W','bg-secondary':form =='D','bg-danger':form =='L'}"
                           *ngFor="let form of standing.form"><small>{{form}}</small>
@@ -83,52 +72,8 @@
                   </div>
                 </td>
                 <!-- points -->
-                <td><small>{{standing.points}}</small></td>
+                <td class="text-center"><small>{{standing.points}}</small></td>
               </tr>
-              <!-- <tr> -->
-              <!-- ranking -->
-              <!-- <td><small>2</small></td> -->
-              <!-- team -->
-              <!-- <td>
-                  <div class="row">
-                    <div class="col-2"><img src="https://api.sofascore.app/api/v1/team/17/image" alt="" width="100%"
-                        height="100%"></div>
-                    <div class="col-8">
-                      <small>Man City</small>
-                    </div>
-                  </div>
-                </td> -->
-              <!-- played -->
-              <!-- <td><small>13</small></td> -->
-              <!-- wins -->
-              <!-- <td><small>10</small></td> -->
-              <!-- draws -->
-              <!-- <td><small>2</small></td> -->
-              <!-- loses -->
-              <!-- <td><small>1</small></td> -->
-              <!-- goals -->
-              <!-- <td><small>39:12</small></td> -->
-              <!-- last 5 matches -->
-              <!-- <td>
-                  <div class="row justify-content-center ">
-                    <div class="col-12 rounded-3">
-                      <div class="row justify-content-center gap-1">
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success "><small>W</small>
-                        </div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-danger"><small>L</small></div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
-                        </div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success"><small>W</small>
-                        </div>
-                        <div class="col-2 p-1 rounded-3 fw-bold text-white text-center bg-success "><small>W</small>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </td> -->
-              <!-- points -->
-              <!-- <td><small>32</small></td> -->
-              <!-- </tr> -->
             </tbody>
           </table>
         </div>

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './Services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Sports_app';
 
+  constructor(private auth: AuthService) { }
 
+  user: any;
+
+  ngOnInit(): void {
+    this.auth.getUser()
+  }
   // isFirstClick = true;
   // first() {
   //   this.isFirstClick = !this.isFirstClick;

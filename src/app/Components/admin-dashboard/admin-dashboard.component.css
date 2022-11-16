@@ -279,7 +279,7 @@ ul#navbar-items li:hover {
 }
 
 .full-width {
-    width: 100vw;
+    width: 99vw;
     position: relative;
     left: 50%;
     right: 50%;

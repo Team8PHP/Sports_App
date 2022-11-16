@@ -10,6 +10,8 @@ export class AuthService {
 
   constructor(private http: HttpClient, private token:TokenService) { }
 
+  user:any;
+
   Login(formInput: FormGroup) {
     return this.http.post(baseUrl + "auth/login", formInput.value, {
       headers: new HttpHeaders({
@@ -28,6 +30,14 @@ export class AuthService {
 
   LogOut() {
     this.token.RemoveToken();
+    this.getUser()
+  }
+
+  getUser(){
+    return this.http.get(baseUrl + 'user').subscribe((res) => {
+      this.user = res;
+      console.log(this.user)
+    });
   }
   
 }

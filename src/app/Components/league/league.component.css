@@ -19,7 +19,7 @@
 .league-wrapper .league-image {
   z-index: 10;
   width: 15%;
-  background-color: white;
+  /* background-color: white; */
   border-radius: 15px;
 }
 
@@ -73,7 +73,7 @@
   }
   .league-wrapper .league-image {
     width: 18%;
-    background-color: white;
+    /* background-color: white; */
     border-radius: none;
   }
   .league-overlay {

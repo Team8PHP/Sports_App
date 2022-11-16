@@ -9,8 +9,8 @@
   <!-- start league data -->
   <div class="d-flex league-data gap-4">
     <!-- league image -->
-    <div class="league-image">
-      <img src="{{club.data.club_image}}" alt="" width="100rem" height="100rem">
+    <div class="league-image" style="background-color: transparent !important;">
+      <img src="{{club.data.club_image}}" alt="" width="100%" height="100%">
     </div>
     <!-- league name and country -->
     <div class="league-name-country justify-content-center gap-2">
@@ -52,23 +52,39 @@
           <div class="row gap-lg-0 gap-sm-1">
             <div class="col-lg-6 col-sm-12 p-1 border-end border-1 border-secondary border-opacity-25">
               <p class="fw-bold">Info</p>
-              <div class="row mt-2">
-                <div class="col-6">
-                  <small class="d-block">Founded</small>
-                  <small class="d-block">Venue</small>
-                  <small class="d-block">TLA</small>
+              <div class="row mt-2 justify-content-between">
+                <div class="col-3 p-lg-3 p-sm-1">
+                  <p class="fs-5 text-muted">Founded</p>
+                  <p class="fs-5 text-muted">Venue</p>
+                  <p class="fs-5 text-muted">TLA</p>
                 </div>
-                <div class="col-6 pe-1">
-                  <pre class="d-block text-end">{{club.data.club_founded}}</pre>
-                  <pre class="d-block text-end">{{club.data.club_venue}}</pre>
-                  <pre class="d-block text-end">{{club.data.club_tla}}</pre>
+                <div class="col-7 p-lg-3 p-sm-1">
+                  <p class="fs-5 text-end">{{club.data.club_founded}}</p>
+                  <p class="fs-5 text-end">{{club.data.club_venue}}</p>
+                  <p class="fs-5 text-end">{{club.data.club_tla}}</p>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 col-sm-12 p-1">
               <p class="fw-bold ">Tournaments</p>
-              <div class="row ps-2 gap-3">
-                <div class="col-3" *ngFor="let competition of club.data.competitions">
+              <div class="row justify-content-center p-lg-3 p-sm-3 gap-3">
+                <div class="col-4 p-sm-3" *ngFor="let competition of club.data.competitions">
+                  <a routerLink="/league/{{competition.id}}" class="text-decoration-none text-black">
+                    <div class="col-12">
+                      <img src="{{competition.image}}" alt="" width="60px" height="60px">
+                      <small class="text-muted fw-bold d-block" style="font-size:11px ;">{{competition.name}}</small>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4 p-sm-3" *ngFor="let competition of club.data.competitions">
+                  <a routerLink="/league/{{competition.id}}" class="text-decoration-none text-black">
+                    <div class="col-12">
+                      <img src="{{competition.image}}" alt="" width="60px" height="60px">
+                      <small class="text-muted fw-bold d-block" style="font-size:11px ;">{{competition.name}}</small>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-4 p-sm-3" *ngFor="let competition of club.data.competitions">
                   <a routerLink="/league/{{competition.id}}" class="text-decoration-none text-black">
                     <div class="col-12">
                       <img src="{{competition.image}}" alt="" width="60px" height="60px">
@@ -87,7 +103,7 @@
   </div>
 </div>
 <!-- end team info section -->
-<div class="row">
+<div class="row my-3">
   <div class="col-lg-8 col-sm-12 ">
     <div class="col-lg-12 p-lg-1 shadow-lg border border-light border-3 rounded-3">
       <p class="fs-6 fw-bold my-1 text-center">Players</p>
@@ -106,7 +122,9 @@
             <td><small>{{player.name}}</small></td>
             <td class="text-center fw-bold"><small
                 [ngClass]="{'text-danger':player.position =='Offence','text-success':player.position =='Midfield','text-primary':player.position =='Defence','text-warning':player.position=='Goalkeeper'}">
-                {{player.position}}</small></td>
+                {{player.position}}</small>
+              <small *ngIf="!player.position" class="text-success">Midfield</small>
+            </td>
             <td class="text-center"><small>{{player.birth_date}}</small></td>
             <td class="text-center"><small>{{player.nationality}}</small> </td>
           </tr>

@@ -10,7 +10,7 @@
   <div class="d-flex league-data gap-4">
     <!-- league image -->
     <div class="league-image">
-      <img src="{{club.data.club_image}}" alt="" width="90%" height="100%">
+      <img src="{{club.data.club_image}}" alt="" width="100rem" height="100rem">
     </div>
     <!-- league name and country -->
     <div class="league-name-country justify-content-center gap-2">
@@ -49,8 +49,8 @@
           </div>
           <!-- end table title -->
           <!-- Info and Tournaments -->
-          <div class="row">
-            <div class="col-6 p-1 border-end border-1 border-secondary border-opacity-25">
+          <div class="row gap-lg-0 gap-sm-1">
+            <div class="col-lg-6 col-sm-12 p-1 border-end border-1 border-secondary border-opacity-25">
               <p class="fw-bold">Info</p>
               <div class="row mt-2">
                 <div class="col-6">
@@ -59,20 +59,20 @@
                   <small class="d-block">TLA</small>
                 </div>
                 <div class="col-6 pe-1">
-                  <small class="d-block text-end">{{club.data.club_founded}}</small>
-                  <small class="d-block text-end">{{club.data.club_venue}}</small>
-                  <small class="d-block text-end">{{club.data.club_tla}}</small>
+                  <pre class="d-block text-end">{{club.data.club_founded}}</pre>
+                  <pre class="d-block text-end">{{club.data.club_venue}}</pre>
+                  <pre class="d-block text-end">{{club.data.club_tla}}</pre>
                 </div>
               </div>
             </div>
-            <div class="col-6 p-1">
+            <div class="col-lg-6 col-sm-12 p-1">
               <p class="fw-bold ">Tournaments</p>
               <div class="row ps-2 gap-3">
                 <div class="col-3" *ngFor="let competition of club.data.competitions">
                   <a routerLink="league/{{competition.id}}" class="text-decoration-none text-black">
                     <div class="col-12">
                       <img src="{{competition.image}}" alt="" width="60px" height="60px">
-                      <small class="text-muted fw-bold" style="font-size:11px ;">{{competition.name}}</small>
+                      <small class="text-muted fw-bold d-block" style="font-size:11px ;">{{competition.name}}</small>
                     </div>
                   </a>
                 </div>
@@ -88,7 +88,7 @@
 </div>
 <!-- end team info section -->
 <div class="row">
-  <div class="col-8 ">
+  <div class="col-lg-8 col-sm-12 ">
     <div class="col-lg-12 p-lg-1 shadow-lg border border-light border-3 rounded-3">
       <p class="fs-6 fw-bold my-1 text-center">Players</p>
       <table class="table table-hover table-bordered border-1 border-seconday border-opacity-50">

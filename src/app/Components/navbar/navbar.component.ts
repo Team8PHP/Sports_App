@@ -35,7 +35,7 @@ export class NavbarComponent implements OnInit {
     const keyword = name.target.value;
     const search = this.generalservice.getSearchClub(keyword).then(response =>{
       this.data= response;
-      console.log(this.data);
+
     });
   }
 

@@ -18,16 +18,16 @@
         <li class="nav-item">
           <div>
             <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                [(ngModel)]="searchText" autofocus>
+              <input class="form-control me-2" type="search" placeholder="Search Club"
+                (input)="searchClub($event)">
             </form>
           </div>
-          <ul class="list-group list-group-flush">
-            <!-- results of ngFor is passed to appFilter with argument searchText -->
-            <li class="list-group-item" *ngFor="let c of characters | appFilter: searchText">
-              {{c}}
-            </li>
-          </ul>
+          <div *ngFor="let result of data">
+            <div class="card card-body ">
+              <p><img src="{{result.image}}" alt="" style="width:50px ;height:50px;">{{ result.name}}</p>
+            </div>
+          </div>
+
         </li>
       </ul>
       <ul *ngIf="auth.isLoggedin() ; else loginBLock" class="navbar-nav ms-auto">

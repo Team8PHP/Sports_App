@@ -61,7 +61,7 @@ export class GeneralService {
   getSearchClub(name:string) {
 
     const response = new Promise(resolve => {
-      this.http.get(baseUrl + 'clubs/search_club?search_club=${name}').subscribe(data => {
+      this.http.get(baseUrl + `clubs/search_club?search_club=${name}`).subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);

@@ -13,7 +13,10 @@ export class NewService {
     return this.http.get(baseUrl+"news/latest")
   }
 
-  GetOtherNews() {
-    return this.http.get(baseUrl+"news/other")
+  GetOtherNews(page:number) {
+    return this.http.get(baseUrl+"news/other/"+page)
+  }
+  GetNewsCount() {
+    return this.http.get(baseUrl+"news/count")
   }
 }

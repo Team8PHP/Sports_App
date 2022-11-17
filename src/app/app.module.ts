@@ -40,6 +40,7 @@ import { AdminUsersComponent } from './Components/admin-users/admin-users.compon
 import { ClubComponent } from './components/club/club.component';
 import { NewsCardComponent } from './Components/news-card/news-card.component';
 import { MainNewsComponent } from './Components/main-news/main-news.component';
+import { NewsViewComponent } from './views/news-view/news-view.component';
 
 @NgModule({
   declarations: [
@@ -71,7 +72,8 @@ import { MainNewsComponent } from './Components/main-news/main-news.component';
     AdminDashboardComponent,
     AdminPostsComponent,
     AdminUsersComponent,
-    ClubComponent
+    ClubComponent,
+    NewsViewComponent
   ],
   imports: [
     BrowserModule,

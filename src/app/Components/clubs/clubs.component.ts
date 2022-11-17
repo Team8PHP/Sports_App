@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/Services/auth.service';
 import { GeneralService } from 'src/app/Services/general.service';
-import { TokenService } from 'src/app/Services/token.service';
 
 @Component({
   selector: 'app-clubs',
@@ -10,7 +10,7 @@ import { TokenService } from 'src/app/Services/token.service';
 })
 export class ClubsComponent implements OnInit {
 
-  constructor(private generalService: GeneralService ,private tokenservice: TokenService ) { }
+  constructor(private generalService: GeneralService ,private auth: AuthService ) { }
 
 
   ngOnInit(): void {
@@ -33,13 +33,11 @@ export class ClubsComponent implements OnInit {
   addfavourites(id: any) {
    
     this.formData.patchValue({
-      user_id:  this.tokenservice.GetUser(),
+      user_id:  this.auth.getUserId().id,
       club_id: id
     });
-
-    // var element = document.getElementById("addFavBtn");
-    // element?.classList.toggle("d-none");
-
+  console.log(this.formData.value);
+  
     return this.generalService.addtoFavourites(this.formData.value).subscribe((res) => {
       console.log(res);
     });

@@ -24,6 +24,8 @@ export class StandingsComponent implements OnInit {
   getLeagueStandings(id: number) {
     return this.generalService.getLeagueStandings(id).subscribe((res) => {
       this.standings = res;
+      
+      // sorting standings by position
       this.standings.data.sort(function (a:any, b:any) {
         if (a.position > b.position) return 1;
         if (a.position < b.position) return -1;

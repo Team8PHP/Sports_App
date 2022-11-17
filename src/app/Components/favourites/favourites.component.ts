@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { EventManager } from '@angular/platform-browser';
+import { AuthService } from 'src/app/Services/auth.service';
 import { GeneralService } from 'src/app/Services/general.service';
 
 @Component({
@@ -9,15 +9,19 @@ import { GeneralService } from 'src/app/Services/general.service';
   styleUrls: ['./favourites.component.css'],
 })
 export class FavouritesComponent implements OnInit {
-  constructor(private generalService: GeneralService) {}
+  constructor(private generalService: GeneralService, private auth: AuthService) { }
   favourites: any = [];
+  user: any;
   ngOnInit(): void {
-    this.getFavourites(2);
+    this.auth.getUser()
+    this.user = this.auth.getUserId()
+    this.getFavourites(this.user.id);
+    console.log(this.user);
   }
 
   formData = new FormGroup({
-    user: new FormControl('',Validators.required),
-    club: new FormControl('',Validators.required)
+    user: new FormControl('', Validators.required),
+    club: new FormControl('', Validators.required)
   })
 
   getFavourites(id: number) {
@@ -25,15 +29,16 @@ export class FavouritesComponent implements OnInit {
       this.favourites = res;
     });
   }
-  addfavourites(event:any){
+  addfavourites(event: any) {
     // this.formData.patchValue({
     //   club: event.target
     // });
     console.log(event.target)
     // return this.generalService.addtoFavourites()
   }
-  deletefavourites(id:number){
-   
-    return this.generalService.deletefromFavourites(id)
+  deletefavourites(id: number) {
+    return this.generalService.deletefromFavourites(id).subscribe(res => {
+      this.getFavourites(this.user.id);
+    })
   }
 }

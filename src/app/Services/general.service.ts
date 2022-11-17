@@ -66,13 +66,13 @@ export class GeneralService {
   }
 
   // favorite teams matches
-  getFavMatches( date: string) {
-    return this.http.get(baseUrl + 'matches/favourites/' +"/"+ date);
+  getFavMatches(user:any, date: string) {
+    return this.http.get(baseUrl + 'matches/favourites/'+user +"/"+ date);
   }
 
   // favorite teams live matches
-  getLiveFavMatches(date: string) {
-    return this.http.get(baseUrl + 'matches/live/' + date );
+  getLiveFavMatches(user:any,date: string) {
+    return this.http.get(baseUrl + 'matches/favourites/live/'+user+'/'+date);
   }
 
 

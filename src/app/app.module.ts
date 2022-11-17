@@ -33,6 +33,7 @@ import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 import { ClubsComponent } from './Components/clubs/clubs.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,8 @@ import { ClubsComponent } from './Components/clubs/clubs.component';
     ErrorComponent,
     AdSpaceComponent,
     StandingsTopWrapperComponent,
-    ClubsComponent
+    ClubsComponent,
+
   ],
   imports: [
     BrowserModule,

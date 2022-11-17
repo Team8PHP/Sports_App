@@ -7,11 +7,13 @@
   </div>
 
   <div *ngIf="clubs.data; else loading">
-    <span class=" bg-opacity-10 m-2" *ngFor="let club of clubs.data">
+    <span class=" bg-opacity-10 m-2 " *ngFor="let club of clubs.data" >
       <div class="d-flex  justify-content-between align-content-center text-center">
-        <a routerLink="club/{{club.club_id}}" class="d-flex  justify-content-between align-content-center text-center text-decoration-none text-black">
-          <img src="{{club.club_image}}" alt="image here" style="width: 50px; height: 50px;">
-           {{club.club_name}}
+        <a routerLink="club/{{club.club_id}}" class=" text-decoration-none text-black px-2">
+          <img src="{{club.club_image}}" alt="image here" style="width: 50px; height: 50px;" >
+        </a>
+        <a routerLink="club/{{club.club_id}}" class=" text-decoration-none text-black">
+            <small class=>{{club.club_name}}</small>
         </a>
         <button id="addFavBtn-{{club.club_id}}" (click)="addfavourites(club.club_id)" class="btn"><svg
             xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-heart"

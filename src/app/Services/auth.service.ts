@@ -36,8 +36,11 @@ export class AuthService {
   getUser(){
     return this.http.get(baseUrl + 'user').subscribe((res) => {
       this.user = res;
-      console.log(this.user)
     });
+  }
+
+  getUserId(){
+    return this.user
   }
   
 }

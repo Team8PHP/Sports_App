@@ -1,7 +1,6 @@
+<!-- start standings container -->
 <div class="container">
   <div class="row gap-1">
-    <!-- start standings section -->
-    <!-- <section> -->
     <!-- start standings table -->
     <div class="col-12 p-lg-1 shadow-lg border border-light border-3 rounded-3">
       <!-- start table title -->
@@ -35,7 +34,7 @@
                 <!-- team -->
                 <td>
                   <a class="text-decoration-none text-black" routerLink="/club/{{standing.club_id}}">
-
+                    <!-- team image and name -->
                     <div class="row">
                       <div class="col-3 image-small"><img src="{{standing.club_image}}" alt="" width="100%"
                           height="100%"></div>
@@ -43,10 +42,7 @@
                         <small>{{standing.club_name}}</small>
                       </div>
                     </div>
-
-
                   </a>
-
                 </td>
                 <!-- played -->
                 <td><small>{{standing.matches_played}}</small></td>
@@ -81,9 +77,6 @@
       <!-- end clubs standings -->
     </div>
     <!-- end standings table -->
-    <!-- <app-top-players class="col-5"></app-top-players> -->
-    <!-- </section> -->
-    <!-- end standings section -->
-
   </div>
 </div>
+<!-- end standings container -->

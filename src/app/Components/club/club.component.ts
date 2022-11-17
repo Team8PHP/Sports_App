@@ -16,6 +16,7 @@ export class ClubComponent implements OnInit {
   club: any = [];
 
   ngOnInit(): void {
+    // retrieve the id from the url
     this.id = this.route.snapshot.paramMap.get('id');
     this.club = this.getClub(this.id);
   }
@@ -23,12 +24,14 @@ export class ClubComponent implements OnInit {
   getClub(id: number) {
     return this.generalService.getClub(id).subscribe((res) => {
       this.club = res;
-      this.club.data.players.sort(function (a: any , b:any) {
+      
+      // Sorting the players by position (1:Offence, 2:Midfield, 3:Defence, 4:Goalkeeper)
+      this.club.data.players.sort(function (a: any, b: any) {
         if (a.position === 'Midfield') return -1;
         if (b.position === 'Defence') return -1;
         return 0;
       });
-      this.club.data.players.sort(function (a: any , b:any) {
+      this.club.data.players.sort(function (a: any, b: any) {
         if (a.position === 'Offence') return -1;
         if (b.position === 'Goalkeeper') return -1;
         return 0;

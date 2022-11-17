@@ -1,40 +1,35 @@
-<!-- start league section -->
-<!-- <section> -->
-<!-- start league wrapper -->
+<!-- start club header component section -->
 <div class="league-wrapper col-lg-8 col-sm-12 my-lg-3">
-  <!-- start league overlay -->
+  <!-- start overlay -->
   <div class="league-overlay">
   </div>
-  <!-- end league overlay -->
-  <!-- start league data -->
+  <!-- end overlay -->
+  <!-- start club data -->
   <div class="d-flex league-data gap-4">
-    <!-- league image -->
+    <!-- club image -->
     <div class="league-image" style="background-color: transparent !important;">
       <img src="{{club.data.club_image}}" alt="" width="100%" height="100%">
     </div>
-    <!-- league name and country -->
+    <!-- club name and country -->
     <div class="league-name-country justify-content-center gap-2">
       <p class="h3 text-color fw-bold">{{club.data.club_name}}</p>
-      <!-- <p class="h3 text-color fw-bold">{{league.data.comp_name}}</p> -->
       <div class="league-flag-country gap-2">
         <!-- flag -->
         <div class="flag-img ">
-          <!-- <img class="rounded-1" src="{{league.data.comp_country_image}}" alt="" width="100%" height="100%"> -->
+          <img  src="{{club.data.country_image}}" alt="" width="100%" height="100%">
         </div>
         <!-- country name -->
         <div class="country-name d-flex align-items-center">
-          <!-- <p class="h6 text-color fw-bold">{{league.data.comp_country}}</p> -->
+          <p class="h6 text-color fw-bold">{{club.data.country}}</p>
         </div>
       </div>
     </div>
   </div>
-  <!-- end league data -->
+  <!-- end club data -->
 </div>
-<!-- end league wrapper -->
-<!-- </section> -->
-<!-- end league section -->
+<!-- end club header component section -->
 
-<!-- Team info -->
+<!-- start team info -->
 <div class="row mb-3">
   <div class="col-lg-8 col-md-12 col-sm-12">
     <div class="container">
@@ -86,7 +81,9 @@
     </div>
   </div>
 </div>
-<!-- end team info section -->
+<!-- end team info  -->
+
+<!-- start players list -->
 <div class="row my-3">
   <div class="col-lg-8 col-sm-12 ">
     <div class="col-lg-12 p-lg-1 shadow-lg border border-light border-3 rounded-3">
@@ -96,7 +93,7 @@
           <tr>
             <th class="col-5"><small>Players</small></th>
             <th class="text-center"><small>Position</small></th>
-            <th class="text-center"><small>Date of birth</small></th>
+            <th class="text-center"><small>Age</small></th>
             <th class="text-center"><small>Nationality</small></th>
           </tr>
         </thead>
@@ -109,7 +106,7 @@
                 {{player.position}}</small>
               <small *ngIf="!player.position" class="text-success">Midfield</small>
             </td>
-            <td class="text-center"><small>{{player.birth_date}}</small></td>
+            <td class="text-center"><small>{{player.age}}</small></td>
             <td class="text-center"><small>{{player.nationality}}</small> </td>
           </tr>
         </tbody>
@@ -117,3 +114,4 @@
     </div>
   </div>
 </div>
+<!-- end players list -->

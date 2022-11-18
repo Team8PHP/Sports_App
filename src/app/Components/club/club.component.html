@@ -16,7 +16,7 @@
       <div class="league-flag-country gap-2">
         <!-- flag -->
         <div class="flag-img ">
-          <img  src="{{club.data.country_image}}" alt="" width="100%" height="100%">
+          <img src="{{club.data.country_image}}" alt="" width="100%" height="100%">
         </div>
         <!-- country name -->
         <div class="country-name d-flex align-items-center">
@@ -48,14 +48,26 @@
             <div class="col-lg-6 col-sm-12 p-1 border-end border-1 border-secondary border-opacity-25">
               <p class="fw-bold">Info</p>
               <div class="row mt-2 justify-content-between">
-                <div class="col-3 p-lg-3 p-sm-1">
+                <div class="col-3">
                   <p class="fs-5 text-muted">Founded</p>
+                </div>
+                <div class="col-9">
+                  <p class="fs-5 text-end">{{club.data.club_founded}}</p>
+                </div>
+              </div>
+              <div class="row mt-2 justify-content-between">
+                <div class="col-3">
                   <p class="fs-5 text-muted">Venue</p>
+                </div>
+                <div class="col-9">
+                  <p class="fs-5 text-end">{{club.data.club_venue}}</p>
+                </div>
+              </div>
+              <div class="row mt-2 justify-content-between">
+                <div class="col-3">
                   <p class="fs-5 text-muted">TLA</p>
                 </div>
-                <div class="col-7 p-lg-3 p-sm-1">
-                  <p class="fs-5 text-end">{{club.data.club_founded}}</p>
-                  <p class="fs-5 text-end">{{club.data.club_venue}}</p>
+                <div class="col-9">
                   <p class="fs-5 text-end">{{club.data.club_tla}}</p>
                 </div>
               </div>

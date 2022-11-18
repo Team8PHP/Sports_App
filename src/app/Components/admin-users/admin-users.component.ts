@@ -14,8 +14,8 @@ export class AdminUsersComponent implements OnInit {
     this.getUsers();
   }
 
-  users:any;
-  message:any
+  users: any;
+  message: any
 
   getUsers() {
     return this.admin.getUsers().subscribe((res) => {
@@ -23,18 +23,21 @@ export class AdminUsersComponent implements OnInit {
     });
   }
 
-  makeAdmin(id:number) {
+  makeAdmin(id: number) {
     return this.admin.makeAdmin(id).subscribe((res) => {
       this.message = res;
       this.getUsers();
     });
   }
 
-  deleteUser(id:number) {
-    return this.admin.deleteUser(id).subscribe((res) => {
-      this.message = res;
-      this.getUsers();
-    });
+  deleteUser(id: number) {
+      if (confirm("Are you sure to delete this?")) {
+      return this.admin.deleteUser(id).subscribe((res) => {
+        this.message = res;
+        this.getUsers();
+      });
+    }
+    return false
   }
 
 }

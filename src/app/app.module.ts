@@ -32,15 +32,6 @@ import { ErrorComponent } from './views/error/error.component';
 import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 import { ClubsComponent } from './Components/clubs/clubs.component';
-import { DatePipe } from '@angular/common';
-import { FavoriteMatchesComponent } from './Components/favorite-matches/favorite-matches.component';
-import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
-import { AdminPostsComponent } from './Components/admin-posts/admin-posts.component';
-import { AdminUsersComponent } from './Components/admin-users/admin-users.component';
-import { ClubComponent } from './components/club/club.component';
-import { NewsCardComponent } from './Components/news-card/news-card.component';
-import { MainNewsComponent } from './Components/main-news/main-news.component';
-import { NewsViewComponent } from './views/news-view/news-view.component';
 
 @NgModule({
   declarations: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/Services/auth.service';
 import { Router } from '@angular/router';
+import { GeneralService } from 'src/app/Services/general.service';
 
 @Component({
   selector: 'app-navbar',
@@ -21,14 +22,21 @@ export class NavbarComponent implements OnInit {
     // 'Batman',
     // 'Batwoman',
   ]
-  constructor(public auth:AuthService, private router:  Router) { }
-
+  constructor(public auth:AuthService, private router:  Router,  private generalservice: GeneralService ) { }
+   data:any;
   ngOnInit(): void {
   }
 
   signOut() {
     this.auth.LogOut()
     this.router.navigate(['/auth']);
+  }
+  searchClub(name:any){
+    const keyword = name.target.value;
+    const search = this.generalservice.getSearchClub(keyword).then(response =>{
+      this.data= response;
+
+    });
   }
 
 

@@ -68,7 +68,18 @@ export class GeneralService {
   getLiveMatches(date: string) {
     return this.http.get(baseUrl + 'matches/live/' + date );
   }
+  // Search Club
+  getSearchClub(name:string) {
 
+    const response = new Promise(resolve => {
+      this.http.get(baseUrl + `clubs/search_club?search_club=${name}`).subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
+    });
+    return response;
+  }
   // favorite teams matches
   getFavMatches(user:any, date: string) {
     return this.http.get(baseUrl + 'matches/favourites/'+user +"/"+ date);

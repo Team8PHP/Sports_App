@@ -15,9 +15,13 @@ export class ClubsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getClubs()
+     this.user=this.auth.getUserId().id
+     console.log(this.user)
   }
 
   clubs: any = [];
+
+  user:any = this.auth.getUserId().id
 
   formData = new FormGroup({
     user_id: new FormControl('', Validators.required),
@@ -30,6 +34,7 @@ export class ClubsComponent implements OnInit {
       this.clubs = res;
     });
   }
+
   addfavourites(id: any) {
    
     this.formData.patchValue({
@@ -43,7 +48,31 @@ export class ClubsComponent implements OnInit {
     });
   }
   // deletefavourites(id: any) {
-  //   return this.generalService.deletefromFavourites(id)
-  // }
+    //   return this.generalService.deletefromFavourites(id)
+    // }
+ 
+   
 
+  deletefavourites(userid:any,clubid: any) {
+    console.log('second')
+    userid=this.auth.getUserId().id
+      return this.generalService.deletefromClubs(userid,clubid).subscribe(res => {
+        console.log('inside deetle')
+      })
+    }
+  
+
+    displayDelete(){
+      // console.log(this.formData.value.club_id)
+     document.getElementById('add-'+this.formData.value.club_id)?.classList.add('hidden')
+     document.getElementById('del-'+this.formData.value.club_id)?.classList.remove('hidden')
+   
+    }
+
+
+    displayadd(){
+      document.getElementById('add-'+this.formData.value.club_id)?.classList.remove('hidden')
+      document.getElementById('del-'+this.formData.value.club_id)?.classList.add('hidden')
+
+    }
 }

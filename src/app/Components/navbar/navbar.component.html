@@ -38,7 +38,7 @@
       </ul>
       <ul *ngIf="auth.isLoggedin() ; else loginBLock" class="navbar-nav ms-auto">
         <li *ngIf="auth.user.role == 'admin'" class="nav-item">
-          <a class="nav-link"  routerLinkActive="active" routerLink="/admin">Admin</a>
+          <a class="nav-link"  routerLinkActive="active" routerLink="/admin/posts">Admin</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" style="cursor: pointer;" (click)="signOut()">Logout</a>

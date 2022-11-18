@@ -47,7 +47,7 @@ export class GeneralService {
     return this.http.get(baseUrl + 'club/'+id);
   }
 
-  
+
 
   // top scorers
   getTopScorers(id: number) {

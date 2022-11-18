@@ -39,6 +39,10 @@ export class NavbarComponent implements OnInit {
     });
   }
 
+  clubPage(result:any){
+    this.router.navigate(['club/:id'])
+  }
+
 
 
 }

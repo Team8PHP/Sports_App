@@ -20,6 +20,10 @@ export class GeneralService {
   deletefromFavourites(id: number) {
     return this.http.delete(baseUrl + 'favourites/' + id);
   }
+  // delete from favourites
+  deletefromClubs(userid:number ,clubid: number) {
+    return this.http.delete(baseUrl + 'delete/' + userid+'/'+clubid);
+  }
   // League Standings
   getLeagueStandings(id: number) {
     return this.http.get(baseUrl + 'league/' + id);

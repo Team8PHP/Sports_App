@@ -40,6 +40,7 @@ import { AdminPostsComponent } from './Components/admin-posts/admin-posts.compon
 import { AdminUsersComponent } from './Components/admin-users/admin-users.component';
 import { ClubComponent } from './components/club/club.component';
 import { NewsViewComponent } from './views/news-view/news-view.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,6 @@ import { NewsViewComponent } from './views/news-view/news-view.component';
     FavouritesComponent,
     CalenderComponent,
     AllLeaguesListComponent,
-    MatchListComponent,
     AuthFormComponent,
     StandingsComponent,
     TopPlayersComponent,

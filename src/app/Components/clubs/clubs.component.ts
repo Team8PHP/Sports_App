@@ -16,12 +16,14 @@ export class ClubsComponent implements OnInit {
   ngOnInit(): void {
     this.getClubs()
      this.user=this.auth.getUserId().id
-     console.log(this.user)
+     this.checkfavourites(this.user)
   }
 
   clubs: any = [];
 
   user:any = this.auth.getUserId().id
+  existfav:any = []
+  allfavs:any
 
   formData = new FormGroup({
     user_id: new FormControl('', Validators.required),
@@ -54,25 +56,56 @@ export class ClubsComponent implements OnInit {
    
 
   deletefavourites(userid:any,clubid: any) {
-    console.log('second')
     userid=this.auth.getUserId().id
       return this.generalService.deletefromClubs(userid,clubid).subscribe(res => {
         console.log('inside deetle')
+        this.displayadd(clubid)
       })
     }
   
 
-    displayDelete(){
+    displayDelete(id:any = null){
       // console.log(this.formData.value.club_id)
      document.getElementById('add-'+this.formData.value.club_id)?.classList.add('hidden')
      document.getElementById('del-'+this.formData.value.club_id)?.classList.remove('hidden')
-   
+
+      if(id != null){
+        console.log('inside if delete display');
+        
+        document.getElementById('add-'+id)?.classList.add('hidden')
+      document.getElementById('del-'+id)?.classList.remove('hidden')
+      
+      }
     }
 
 
-    displayadd(){
+    displayadd(id:any = null){
       document.getElementById('add-'+this.formData.value.club_id)?.classList.remove('hidden')
       document.getElementById('del-'+this.formData.value.club_id)?.classList.add('hidden')
 
+      if(id != null){
+        console.log('inside if adddsiplay');
+        
+        document.getElementById('add-'+id)?.classList.remove('hidden')
+        document.getElementById('del-'+id)?.classList.add('hidden')
+      
+      }
     }
+    
+    checkfavourites(id:any){
+      return this.generalService.getFavourites(id).subscribe((res) => {
+        this.allfavs=res
+        var that = this
+        // this.existfav=this.allfavs.data
+        this.allfavs.data.forEach(function  (team:any)  {
+          that.existfav.push(team.club_id)
+        });
+        console.log(this.existfav)
+        this.existfav.forEach(function  (id:any)  {
+          that.displayDelete(id)
+        });
+        this.existfav = []
+      });
+    }
+    
 }

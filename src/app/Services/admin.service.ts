@@ -23,4 +23,15 @@ export class AdminService {
   deleteUser(id:number) {
     return this.http.delete(baseUrl + 'admin/users/' + id);
   }
+
+
+  //get news
+  getNews() {
+    return this.http.get(baseUrl + 'admin/news');
+  }
+
+  //get news
+  deleteNews(id:number) {
+    return this.http.delete(baseUrl + 'admin/news/' + id);
+  }
 }

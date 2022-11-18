@@ -1,17 +1,25 @@
-<div class="content-wrapper" *ngIf="latestNews">
-  <article class="card-60 social news-card ">
-      <figure> <img src="{{latestNews.news_image }}" alt="La Sagrada Familia" class=""></figure>
-
-      <div class="flex-content">
-
-          <h4 class="">
-              {{latestNews.title }}
-          </h4>
-          <p>
-              {{latestNews.description }}
-          </p>
-          <a href="{{latestNews.news_link }}"
-              class="news-card__read-more" target="_blank">Read more <i class="fas fa-long-arrow-alt-right"></i></a>
-      </div>
-  </article>
+<div class="content-wrapper" *ngIf="latestNews; else loading">
+    <div class="  bg-white  d-flex flex-column mt-4 col-12 shadow overflow-hidden rounded-3"
+        style="width: 99% !important;">
+        <div class="row">
+            <div class="col-sm-12 col-md-8">
+                <img src="{{latestNews.news_image }}" alt="La Sagrada Familia" class="img-fluid">
+            </div>
+            <div class="col-sm-12 col-md-4 p-3 pe-5 d-flex flex-column justify-content-between">
+                <div>
+                    <h4 class="">{{latestNews.title }}</h4>
+                    <p class="text-secondary">{{latestNews.description }}</p>
+                </div>
+                <a href="{{latestNews.news_link }}" class="news-card__read-more" target="_blank">Read more
+                    <i class="fas fa-long-arrow-alt-right"></i></a>
+            </div>
+        </div>
+    </div>
 </div>
+<ng-template #loading>
+    <div style="height: 80vh;" class="w-100 m-auto">
+        <div class="spinner-border text-primary m-auto text-center my-5" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+</ng-template>

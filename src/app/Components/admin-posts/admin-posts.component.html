@@ -1,24 +1,31 @@
 <div class="table-responsive px-2">
+    <div *ngIf="message" class="alert alert-primary" role="alert">
+        {{message.message}}
+    </div>
     <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">ID</th>
-                <th scope="col">Image</th>
                 <th scope="col">Title</th>
-                <th scope="col">Description</th>
+                <th scope="col">Content</th>
                 <th scope="col">Author</th>
+                <th scope="col">Source</th>
+                <th scope="col">Date</th>
                 <th class="text-center" scope="col">Delete</th>
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>1</td>
-                <td><img src="" alt=""></td>
-                <td>title test</td>
-                <td>description</td>
-                <td>someone</td>
-                <td class="text-center"><i class="fa-solid fa-trash text-danger"></i></td>
+            <tr *ngFor="let article of news">
+                <td>{{article.id}}</td>
+                <td>{{article.title | slice:0:20}}...</td>
+                <td>{{article.content | slice:0:40}}...</td>
+                <td>{{article.author}}</td>
+                <td>{{article.source}}</td>
+                <td>{{article.date}}</td>
+                <td class="text-center"><i class="fa-solid fa-trash text-danger" (click)="deleteNews(article.id)"></i>
+                </td>
             </tr>
         </tbody>
     </table>
+
 </div>

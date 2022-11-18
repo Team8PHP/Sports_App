@@ -32,6 +32,14 @@ import { ErrorComponent } from './views/error/error.component';
 import { AdSpaceComponent } from './Components/ad-space/ad-space.component';
 import { StandingsTopWrapperComponent } from './Components/standings-top-wrapper/standings-top-wrapper.component';
 import { ClubsComponent } from './Components/clubs/clubs.component';
+import { NewsCardComponent } from './components/news-card/news-card.component';
+import { MainNewsComponent } from './components/main-news/main-news.component';
+import { FavoriteMatchesComponent } from './components/favorite-matches/favorite-matches.component';
+import { AdminDashboardComponent } from './Components/admin-dashboard/admin-dashboard.component';
+import { AdminPostsComponent } from './Components/admin-posts/admin-posts.component';
+import { AdminUsersComponent } from './Components/admin-users/admin-users.component';
+import { ClubComponent } from './components/club/club.component';
+import { NewsViewComponent } from './views/news-view/news-view.component';
 
 @NgModule({
   declarations: [

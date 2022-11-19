@@ -11,17 +11,7 @@ import { GeneralService } from 'src/app/Services/general.service';
 })
 export class NavbarComponent implements OnInit {
   title = 'angular-text-search-highlight';
-  searchText = '';
-  characters = [
-    // 'Ant-Man',
-    // 'Aquaman',
-    // 'Asterix',
-    // 'The Atom',
-    // 'The Avengers',
-    // 'Batgirl',
-    // 'Batman',
-    // 'Batwoman',
-  ]
+
   constructor(public auth:AuthService, private router:  Router,  private generalservice: GeneralService ) { }
    data:any;
   ngOnInit(): void {

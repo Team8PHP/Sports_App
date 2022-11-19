@@ -15,8 +15,8 @@ export class ClubsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getClubs()
-     this.user=this.auth.getUserId().id
-     this.checkfavourites(this.user)
+    this.user=this.auth.getUserId().id
+    this.checkfavourites(this.user)
   }
 
   clubs: any = [];

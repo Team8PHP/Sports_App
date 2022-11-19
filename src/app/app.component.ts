@@ -21,7 +21,7 @@ export class AppComponent implements OnInit {
     if(this.auth.isLoggedin()){
       this.auth.autoLogin()
     }
-    this.router.navigate(['/']);
+    this.router.navigate(['/news']);
   }
 
 }

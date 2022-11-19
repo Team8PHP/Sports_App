@@ -11,7 +11,7 @@ import { GeneralService } from 'src/app/Services/general.service';
 })
 export class NavbarComponent implements OnInit {
   title = 'angular-text-search-highlight';
-  searchText : any;
+  searchText : any ='';
   constructor(public auth:AuthService, private router:  Router,  private generalservice: GeneralService ) { }
    data:any;
   ngOnInit(): void {
@@ -32,6 +32,7 @@ export class NavbarComponent implements OnInit {
   }
 
 clubPage(){
-  window.location.reload()
+  this.searchText=''
+  this
 }
 }

@@ -40,5 +40,7 @@ export class NavbarComponent implements OnInit {
     console.log(search);
   }
 
-
+clubPage(){
+  window.location.reload()
+}
 }

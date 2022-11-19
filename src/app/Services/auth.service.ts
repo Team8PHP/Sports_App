@@ -10,7 +10,7 @@ export class AuthService {
 
   constructor(private http: HttpClient, private token:TokenService) { }
 
-  user:any;
+  user:any 
 
   Login(formInput: FormGroup) {
     return this.http.post(baseUrl + "auth/login", formInput.value, {
@@ -42,5 +42,18 @@ export class AuthService {
   getUserId(){
     return this.user
   }
+
+  autoLogin(){
+    return this.http.get(baseUrl + 'user',{
+      headers: new HttpHeaders({
+        "Authorization": `Bearer ${this.token.GetToken()}`
+      }),
+    })
+  }
+
+  setUser(user:any){
+    this.user=user
+  }
+
   
 }

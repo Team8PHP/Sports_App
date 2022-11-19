@@ -6,22 +6,12 @@ import { GeneralService } from 'src/app/Services/general.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styles: [
-  ]
+  styleUrls: ['./navbar.component.css']
+
 })
 export class NavbarComponent implements OnInit {
   title = 'angular-text-search-highlight';
-  searchText = '';
-  characters = [
-    // 'Ant-Man',
-    // 'Aquaman',
-    // 'Asterix',
-    // 'The Atom',
-    // 'The Avengers',
-    // 'Batgirl',
-    // 'Batman',
-    // 'Batwoman',
-  ]
+  searchText : any;
   constructor(public auth:AuthService, private router:  Router,  private generalservice: GeneralService ) { }
    data:any;
   ngOnInit(): void {
@@ -33,12 +23,15 @@ export class NavbarComponent implements OnInit {
   }
   searchClub(name:any){
     const keyword = name.target.value;
+    this.searchText= keyword;
     const search = this.generalservice.getSearchClub(keyword).then(response =>{
       this.data= response;
 
     });
+    console.log(this.searchText);
   }
 
-
-
+clubPage(){
+  window.location.reload()
+}
 }

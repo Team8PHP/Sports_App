@@ -47,7 +47,7 @@ export class GeneralService {
     return this.http.get(baseUrl + 'club/'+id);
   }
 
-  
+
 
   // top scorers
   getTopScorers(id: number) {
@@ -74,6 +74,7 @@ export class GeneralService {
     const response = new Promise(resolve => {
       this.http.get(baseUrl + `clubs/search_club?search_club=${name}`).subscribe(data => {
         resolve(data);
+
       }, err => {
         console.log(err);
       });

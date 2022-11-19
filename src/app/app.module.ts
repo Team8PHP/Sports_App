@@ -41,6 +41,10 @@ import { AdminUsersComponent } from './Components/admin-users/admin-users.compon
 import { ClubComponent } from './components/club/club.component';
 import { NewsViewComponent } from './views/news-view/news-view.component';
 import { DatePipe } from '@angular/common';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -84,14 +88,19 @@ import { DatePipe } from '@angular/common';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    MatSliderModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    NgxMatSelectSearchModule,
+    Ng2SearchPipeModule,
   ],
   providers: [
     DatePipe,
-    { 
+    {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true,
-      
+
     },
   ],
   bootstrap: [AppComponent]

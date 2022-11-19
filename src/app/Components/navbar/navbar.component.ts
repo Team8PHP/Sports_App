@@ -37,8 +37,8 @@ export class NavbarComponent implements OnInit {
       this.data= response;
 
     });
+    console.log(search);
   }
-
 
 
 }

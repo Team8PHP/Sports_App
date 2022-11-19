@@ -74,6 +74,7 @@ export class GeneralService {
     const response = new Promise(resolve => {
       this.http.get(baseUrl + `clubs/search_club?search_club=${name}`).subscribe(data => {
         resolve(data);
+        console.log(data)
       }, err => {
         console.log(err);
       });

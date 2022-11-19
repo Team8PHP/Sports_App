@@ -1,16 +1,15 @@
 .search{
-  background-color: rgb(255, 255, 255);
-    position: absolute;
 
+    position: absolute;
     width: 360px;
     padding-top: 8px;
     padding-bottom: 8px;
     border-radius: 4px;
-    box-shadow: rgb(34 34 38 / 8%) 0px 1px 8px 2px;
     z-index: 3;
     transform: none;
 }
 .searchbar{
+  background-color: rgb(255, 255, 255);
   position: relative;
     height: 100%;
 }

@@ -14,14 +14,20 @@ export class AppComponent implements OnInit {
   constructor(private auth: AuthService , private router:Router) { }
 
   user: any;
-
+  trial=0
+  timer:any
 
   ngOnInit(): void {
     
     if(this.auth.isLoggedin()){
-      this.auth.autoLogin()
+      this.timer=setInterval(() => {
+        this.auth.autoLogin()
+        this.trial++;
+        if(this.trial==3){
+          clearInterval(this. timer)
+        }
+      }, 2000)
     }
-    this.router.navigate(['/news']);
   }
 
 }

@@ -12,11 +12,18 @@ export class FavouritesComponent implements OnInit {
   constructor(private generalService: GeneralService, private auth: AuthService) { }
   favourites: any = [];
   user: any;
+  trial=0
+  timer:any
   ngOnInit(): void {
-    this.auth.getUser()
-    this.user = this.auth.getUserId()
-    this.getFavourites(this.user.id);
-    console.log(this.user);
+    this. timer = setInterval(() => {
+      this.auth.getUser()
+      this.user = this.auth.getUserId()
+      this.getFavourites(this.user.id);
+      if(this.trial){
+        clearInterval(this. timer)
+      }
+    }, 2000)
+
   }
 
   formData = new FormGroup({

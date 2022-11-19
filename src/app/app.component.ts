@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from './Services/auth.service';
+import { TokenService } from './Services/token.service';
 
 @Component({
   selector: 'app-root',
@@ -9,23 +11,21 @@ import { AuthService } from './Services/auth.service';
 export class AppComponent {
   title = 'Sports_app';
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService , private router:Router) { }
 
   user: any;
 
-  ngOnInit(): void {
-    this.auth.getUser()
-  }
-  // isFirstClick = true;
-  // first() {
-  //   this.isFirstClick = !this.isFirstClick;
-  //   console.log('first');
-  //   document.getElementById("1")?.classList.add('bg-danger')
-  // }
 
-  // second() {
-  //   this.isFirstClick = !this.isFirstClick;
-  //   document.getElementById("1")?.classList.remove('bg-danger')
-  //   console.log('second');
-  // }
+  ngOnInit(): void {
+    if(this.auth.isLoggedin()){
+      this.auth.autoLogin().subscribe((res)=>{
+        this.auth.setUser(res);
+        console.log("Here");
+        this.router.navigate(['/']);
+    })
+    
+    }
+
+  }
+
 }

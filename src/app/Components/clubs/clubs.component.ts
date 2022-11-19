@@ -21,7 +21,7 @@ export class ClubsComponent implements OnInit {
 
   clubs: any = [];
 
-  user:any = this.auth.getUserId().id
+  user:any 
   existfav:any = []
   allfavs:any
 

@@ -14,7 +14,6 @@ export class FavoriteMatchesComponent implements OnInit {
   constructor(private generalService: GeneralService,  public calenderService : CalenderService ,private auth:AuthService) { }
 
   ngOnInit(): void {
-    this.auth.getUserId().id
     this.getByDate(this.user,this.date);
     this.calenderService.dateUpdated.subscribe(
       (res) => {
@@ -27,7 +26,7 @@ export class FavoriteMatchesComponent implements OnInit {
   matches: any;
   liveChecked: boolean = false;
   date:any = this.calenderService.CalenderDate
-  user:any = this.auth.getUserId().id
+  user:any
 
   getByDate(user:any,date: any) {
     return this.generalService.getFavMatches(user,date).subscribe((res) => {

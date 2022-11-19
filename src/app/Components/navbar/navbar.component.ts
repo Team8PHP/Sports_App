@@ -6,8 +6,8 @@ import { GeneralService } from 'src/app/Services/general.service';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
-  styles: [
-  ]
+  styleUrls: ['./navbar.component.css']
+
 })
 export class NavbarComponent implements OnInit {
   title = 'angular-text-search-highlight';
@@ -37,10 +37,6 @@ export class NavbarComponent implements OnInit {
       this.data= response;
 
     });
-  }
-
-  clubPage(result:any){
-    this.router.navigate(['club/:id'])
   }
 
 

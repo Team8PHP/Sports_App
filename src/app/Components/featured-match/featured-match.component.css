@@ -56,8 +56,8 @@ a {
 .iZSrTq {
   justify-content: space-evenly;
   display: flex;
-    -webkit-box-align: start;
-    align-items: start;
+    -webkit-box-align: flex-start;
+    align-items: flex-start;
 }
 .gjJmZQ {
   display: flex;

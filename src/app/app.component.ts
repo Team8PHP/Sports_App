@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './Services/auth.service';
 import { TokenService } from './Services/token.service';
@@ -8,7 +8,7 @@ import { TokenService } from './Services/token.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   title = 'Sports_app';
 
   constructor(private auth: AuthService , private router:Router) { }
@@ -17,15 +17,11 @@ export class AppComponent {
 
 
   ngOnInit(): void {
-    if(this.auth.isLoggedin()){
-      this.auth.autoLogin().subscribe((res)=>{
-        this.auth.setUser(res);
-        console.log("Here");
-        this.router.navigate(['/']);
-    })
     
+    if(this.auth.isLoggedin()){
+      this.auth.autoLogin()
     }
-
+    this.router.navigate(['/']);
   }
 
 }

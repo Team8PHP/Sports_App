@@ -48,7 +48,9 @@ export class AuthService {
       headers: new HttpHeaders({
         "Authorization": `Bearer ${this.token.GetToken()}`
       }),
-    })
+    }).subscribe((res)=>{
+      this.setUser(res);
+  })
   }
 
   setUser(user:any){
